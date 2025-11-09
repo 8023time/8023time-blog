@@ -9,13 +9,15 @@
   "scripts": {
     "open": "vite",
     "translate": "tsx scripts/md-to-tsx/index.ts",
+    "translate:enhanced": "tsx scripts/md-to-tsx/index-enhanced.ts",
     "lint": "eslint .",
     "preview": "vite preview",
     "build": "tsc -b && vite build",
     "prettier": "prettier --write .",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
-    "commit-lint": "commitlint --config commitlint.config.js"
+    "commit-lint": "commitlint --config commitlint.config.js",
+    "release": "standard-version"
   },
   "config": {
     "commitizen": {
@@ -67,6 +69,7 @@
     "remark-rehype": "^11.1.2",
     "sass": "^1.93.3",
     "shiki": "^3.14.0",
+    "standard-version": "^9.5.0",
     "tailwindcss": "^4.1.16",
     "tsx": "^4.20.6",
     "typescript": "~5.9.3",
