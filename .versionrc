@@ -1,0 +1,43 @@
+{
+  "types": [
+    {
+      "type": "feat",
+      "section": "🚀 新功能 | Features",
+      "hidden": false
+    },
+    {
+      "type": "fix",
+      "section": "🐞 修复 | Bug Fixes",
+      "hidden": false
+    },
+    {
+      "type": "perf",
+      "section": "⚡ 性能优化 | Performance",
+      "hidden": false
+    },
+    {
+      "type": "refactor",
+      "section": "♻️ 重构 | Refactoring",
+      "hidden": false
+    },
+    {
+      "type": "style",
+      "section": "🎨 样式调整 | Style",
+      "hidden": true
+    },
+    {
+      "type": "test",
+      "section": "✅ 测试 | Tests",
+      "hidden": true
+    },
+    {
+      "type": "docs",
+      "section": "📚 文档 | Documentation",
+      "hidden": true
+    },
+    {
+      "type": "chore",
+      "section": "🔧 维护 | Chores"
+    }
+  ]
+}
