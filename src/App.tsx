@@ -1,20 +1,40 @@
-import './App.scss';
+import './APP.css';
+import type React from 'react';
 import router from '@router/index';
-// import Cursor from '@components/Cursor';
+import { useEffect, useRef } from 'react';
 import { RouterProvider } from 'react-router';
-import { GridBackground } from '@components/Background';
+import { FloatButton } from '@components/index';
+import { useThemeStore, applyThemeToDocument, setupSystemThemeListener } from '@store/index';
 
-export default function App() {
+const ThemeInitializer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { theme } = useThemeStore();
+  const cleanup = useRef<(() => void) | undefined>(undefined);
+
+  useEffect(() => {
+    if (theme.name === 'System') {
+      const handleSystemChange = () => {
+        applyThemeToDocument('System');
+      };
+      cleanup.current = setupSystemThemeListener(handleSystemChange);
+    }
+    return () => {
+      cleanup.current?.();
+    };
+  }, [theme.name]);
+
+  return <>{children}</>;
+};
+
+const App: React.FC = () => {
   return (
     <>
-      {/* {鼠标效果} */}
-      {/* <Cursor /> */}
-      {/* {背景效果} */}
-      <div className='fixed top-0 left-0 -z-1 h-full w-full'>
-        <GridBackground direction='diagonal' speed={0.3} squareSize={35} borderColor='#eaeaea' />
-      </div>
-      {/* {路由} */}
-      <RouterProvider router={router}></RouterProvider>
+      {/* 上拉按钮 */}
+      <FloatButton.BackTop />
+      {/* 监听主题切换 */}
+      <ThemeInitializer>
+        <RouterProvider router={router}></RouterProvider>
+      </ThemeInitializer>
     </>
   );
-}
+};
+export default App;
