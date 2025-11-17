@@ -1,11 +1,10 @@
 import { NavLink } from 'react-router';
-import { Content } from '@layout/index';
 import { siteData } from '@data/site.data';
 import { SiteCard } from '@components/Card';
 
 const Site = () => {
   return (
-    <Content>
+    <>
       {/* 卡片网格 */}
       {siteData.map((group, i) => (
         <div key={i}>
@@ -22,7 +21,7 @@ const Site = () => {
           </div>
         </div>
       ))}
-    </Content>
+    </>
   );
 };
 
