@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               <a className='shrink-0' aria-label='Home' href='/'>
                 <NavLink to='/'>
                   <div className='flex items-center gap-5'>
-                    <img src='/public/avatar.png' width={25} />
+                    <img src='/avatar.png' width={25} />
                     <span className='text-center font-sans text-lg font-bold text-gray-950 dark:text-white'>
                       8023time
                     </span>
