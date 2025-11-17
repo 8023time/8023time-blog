@@ -6,7 +6,7 @@ interface ColorRGB {
   b: number;
 }
 
-interface SplashCursorProps {
+export interface SplashCursorProps {
   SIM_RESOLUTION?: number;
   DYE_RESOLUTION?: number;
   CAPTURE_RESOLUTION?: number;
