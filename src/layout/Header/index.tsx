@@ -2,8 +2,8 @@ import { cn } from '@utils/className';
 import { NavLink } from 'react-router';
 import { Tooltip } from '@components/index';
 import { useThemeStore } from '@store/index';
+import { SunRiseIcon } from '@components/index';
 import { MAIN_NAV_CONFIG } from '@data/header.data';
-import { SunRiseIcon, GithubIcon } from '@components/index';
 
 export interface HeaderProps {
   className?: string;
@@ -48,6 +48,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                   </NavLink>
                 );
               })}
+
               <NavLink
                 to='https://www.8023time.com'
                 className='group relative px-1.5 text-sm/6 text-sky-800 dark:text-sky-300'
@@ -89,14 +90,10 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 </svg>
               </NavLink>
 
-              <Tooltip content='Github' placement='bottom'>
-                <NavLink to='https://www.github.com/8023time' target='_blank'>
-                  <GithubIcon alt='Github' />
-                </NavLink>
-              </Tooltip>
-
               <Tooltip content='切换黑暗模式' placement='bottom'>
-                <SunRiseIcon alt='SunRise' onClick={handleClick} />
+                <div className='flex items-center'>
+                  <SunRiseIcon alt='SunRise' onClick={handleClick} />
+                </div>
               </Tooltip>
             </div>
 
