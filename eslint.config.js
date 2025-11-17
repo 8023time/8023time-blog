@@ -21,7 +21,7 @@ export default defineConfig([
     },
     rules: {
       // JavaScript 规则
-      'no-console': ['warn', { allow: ['error'] }], // 警告 console.log，但允许 console.error
+      'no-console': ['warn', { allow: ['error', 'warn'] }], // 警告 console.log，但允许 console.error
       eqeqeq: 'error', // 强制使用 === 而非 ==
 
       // TypeScript 规则
@@ -29,6 +29,6 @@ export default defineConfig([
     },
   },
   {
-    ignores: ['dist', 'build', 'node_modules', 'public'],
+    ignores: ['dist', 'build', 'node_modules', 'public', 'src/generated'],
   },
 ]);

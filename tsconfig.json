@@ -14,7 +14,8 @@
       "@router/*": ["src/router/*"],
       "@generated/*": ["src/generated/*"],
       "@data/*": ["src/common/data/*"],
-      "@hooks/*": ["src/hooks/*"]
+      "@hooks/*": ["src/hooks/*"],
+      "@store/*": ["src/store/*"]
     }
   },
   "exclude": ["node_modules", "dist"]
