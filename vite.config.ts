@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
 import tailwindcss from '@tailwindcss/vite';
+import react from '@vitejs/plugin-react-swc';
 import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
@@ -18,6 +18,7 @@ export default defineConfig({
       '@generated': fileURLToPath(new URL('./src/generated', import.meta.url)),
       '@hooks': fileURLToPath(new URL('./src/hooks', import.meta.url)),
       '@data': fileURLToPath(new URL('./src/common/data', import.meta.url)),
+      '@store': fileURLToPath(new URL('./src/store', import.meta.url)),
     },
   },
 });
