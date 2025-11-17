@@ -2,9 +2,9 @@ import type React from 'react';
 
 const Waves: React.FC = () => {
   return (
-    <div className='absolute right-0 bottom-0 left-0 w-full overflow-hidden leading-none'>
+    <div className='absolute right-0 bottom-0 left-0 mb-0.5 w-full overflow-hidden leading-none'>
       <svg
-        className='block h-32 w-full text-amber-50 dark:text-black'
+        className='block h-20 w-full text-amber-50 sm:h-15 md:h-25 lg:h-30 dark:text-black'
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 24 150 28'
         preserveAspectRatio='none'

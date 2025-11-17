@@ -81,7 +81,7 @@ const defaultTypewriterProps: TypewriterProps = {
   textColor: 'black',
   mask: false,
   maskColor: '#fff',
-  textSize: 16,
+  textSize: 12,
 };
 
 /**
@@ -168,7 +168,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
   return (
     <div className={`inline-block ${className}`}>
       <span
-        className='inline-block overflow-hidden p-3 align-middle text-4xl whitespace-pre-wrap'
+        className='inline-block overflow-hidden p-3 align-middle whitespace-pre-wrap'
         style={{ position: 'relative', ...gradientStyle, fontSize: textSize }}
       >
         <span
