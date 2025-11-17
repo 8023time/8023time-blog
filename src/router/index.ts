@@ -35,11 +35,34 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: '/comments',
+        lazy: async () => {
+          const { default: Component } = await import('@pages/Comments/index');
+          return { Component };
+        },
+      },
+      {
         path: '/statistics',
         lazy: async () => {
           const { default: Component } = await import('@pages/Statistics/index');
           return { Component };
         },
+      },
+      {
+        path: '/docs',
+        lazy: async () => {
+          const { default: Component } = await import('@pages/Docs/index');
+          return { Component };
+        },
+        children: [
+          {
+            path: ':name',
+            lazy: async () => {
+              const { default: Component } = await import('@pages/Docs/index');
+              return { Component };
+            },
+          },
+        ],
       },
       {
         path: '*',
