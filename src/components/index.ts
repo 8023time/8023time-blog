@@ -1,5 +1,5 @@
 export { default as Tooltip } from './Tooltip/index';
-export type { TooltipPlacement, TooltipProps } from './Tooltip/index';
+export type { TooltipPlacement, TooltipProps } from './Tooltip/interface';
 
 export { default as SplashCursor } from './Cursor/SplashCursor';
 export type { SplashCursorProps } from './Cursor/SplashCursor';
