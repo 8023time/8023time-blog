@@ -8,6 +8,14 @@ export interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
+  const chunk = <T,>(arr: T[], size: number): T[][] => {
+    const result: T[][] = [];
+    for (let i = 0; i < arr.length; i += size) {
+      result.push(arr.slice(i, i + size));
+    }
+    return result;
+  };
+
   return (
     <div
       className={cn('mt-40 w-full bg-gray-50 text-sm/loose text-gray-950 dark:bg-gray-950 dark:text-white', className)}
@@ -43,7 +51,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             {/* GitHub */}
             <li>
               <a
-                href='https://github.com/your-username'
+                href='https://github.com/8023time'
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='GitHub'
@@ -61,7 +69,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             {/* X (Twitter) */}
             <li>
               <a
-                href='https://x.com/your-username'
+                href='https://x.com/Alice577536738'
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='X'
@@ -132,7 +140,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             </li>
           </ul>
 
-          <div>哇，本站居然运行了 400 天 10 小时 10 分 30 秒😯</div>
+          <div>{footerData.top.stats}</div>
         </div>
       </div>
 
@@ -149,19 +157,25 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               {footerData.categories
                 .filter((_, index) => index % 2 === 0)
                 .map((item) => {
+                  const groups = chunk(item.items, 3);
                   return (
-                    <div className='text-center'>
+                    <div className='border-x border-b border-gray-950/5 py-8 pl-2 text-center not-md:border-0 md:border-b-0 dark:border-white/10'>
                       <h3 className='font-semibold'>{item.title}</h3>
-                      <ul className='mt-4 grid gap-4'>
-                        {item.items.map((subItem) => {
-                          return (
-                            <li>
-                              <NavLink className='hover:underline' to={subItem.to}>
-                                {subItem.name}
+                      <ul
+                        className='mt-4 grid gap-4 px-10'
+                        style={{
+                          gridTemplateColumns: `repeat(${groups.length}, minmax(0, 1fr))`,
+                        }}
+                      >
+                        {groups.map((group, groupIndex) => (
+                          <li key={groupIndex} className='flex flex-col gap-3'>
+                            {group.map((item) => (
+                              <NavLink key={item.to} className='hover:underline' to={item.to}>
+                                {item.name}
                               </NavLink>
-                            </li>
-                          );
-                        })}
+                            ))}
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   );
@@ -173,19 +187,25 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               {footerData.categories
                 .filter((_, index) => index % 2 === 1)
                 .map((item) => {
+                  const groups = chunk(item.items, 3);
                   return (
-                    <div className='text-center'>
+                    <div className='border-x border-b border-gray-950/5 py-8 pl-2 text-center not-md:border-0 md:border-b-0 dark:border-white/10'>
                       <h3 className='font-semibold'>{item.title}</h3>
-                      <ul className='mt-4 grid gap-4'>
-                        {item.items.map((subItem) => {
-                          return (
-                            <li>
-                              <NavLink className='hover:underline' to={subItem.to}>
-                                {subItem.name}
+                      <ul
+                        className='mt-4 grid gap-4 px-10'
+                        style={{
+                          gridTemplateColumns: `repeat(${groups.length}, minmax(0, 1fr))`,
+                        }}
+                      >
+                        {groups.map((group, groupIndex) => (
+                          <li key={groupIndex} className='flex flex-col gap-3'>
+                            {group.map((item) => (
+                              <NavLink key={item.to} className='hover:underline' to={item.to}>
+                                {item.name}
                               </NavLink>
-                            </li>
-                          );
-                        })}
+                            ))}
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   );
@@ -196,19 +216,25 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           {/* 桌面端导航列 */}
           <div className='mx-auto hidden w-full grid-cols-4 justify-between gap-y-0 *:first:border-l-0 *:last:border-r-0 md:grid md:grid-cols-4 md:gap-6 md:gap-x-4 lg:gap-8'>
             {footerData.categories.map((item) => {
+              const groups = chunk(item.items, 3);
               return (
-                <div className='border-x border-b border-gray-950/5 py-10 pl-2 text-center not-md:border-0 md:border-b-0 dark:border-white/10'>
+                <div className='border-x border-b border-gray-950/5 py-8 pl-2 text-center not-md:border-0 md:border-b-0 dark:border-white/10'>
                   <h3 className='font-semibold'>{item.title}</h3>
-                  <ul className='mt-4 grid gap-4'>
-                    {item.items.map((subItem) => {
-                      return (
-                        <li>
-                          <NavLink className='hover:underline' to={subItem.to}>
-                            {subItem.name}
+                  <ul
+                    className='mt-4 grid gap-10 px-10'
+                    style={{
+                      gridTemplateColumns: `repeat(${groups.length}, minmax(0, 1fr))`,
+                    }}
+                  >
+                    {groups.map((group, groupIndex) => (
+                      <li key={groupIndex} className='flex flex-col gap-3'>
+                        {group.map((item) => (
+                          <NavLink key={item.to} className='hover:underline' to={item.to}>
+                            {item.name}
                           </NavLink>
-                        </li>
-                      );
-                    })}
+                        ))}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               );
