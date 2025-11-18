@@ -22,9 +22,9 @@ export const footerData = {
     {
       title: '个人空间',
       items: [
-        { name: '回忆录', to: '/memory' },
-        { name: '留言区', to: '/comments' },
-        { name: '音乐播放', to: '/music' },
+        { name: '回忆相册', to: '/album' },
+        { name: '留言版区', to: '/comments' },
+        { name: '音乐天地', to: '/music' },
       ],
     },
     {

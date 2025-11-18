@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: '/site',
         lazy: async () => {
-          const { default: Component } = await import('@pages/Site/index');
+          const { default: Component } = await import('@/pages/Site/index');
           return { Component };
         },
       },
@@ -45,6 +45,13 @@ const router = createBrowserRouter([
         path: '/statistics',
         lazy: async () => {
           const { default: Component } = await import('@pages/Statistics/index');
+          return { Component };
+        },
+      },
+      {
+        path: '/album',
+        lazy: async () => {
+          const { default: Component } = await import('@pages/album/index');
           return { Component };
         },
       },
