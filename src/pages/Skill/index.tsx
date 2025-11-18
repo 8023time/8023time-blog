@@ -1,10 +1,10 @@
-import { Tag } from '@components/index';
 import { skills } from '@data/skill.data';
-import { Container, Logo } from './components';
+import { Container, Logo } from './components/index';
+import { Tag, SectionDivider } from '@components/index';
 
 export default function Skill() {
   return (
-    <>
+    <SectionDivider>
       {skills.map((item, index) => (
         <Container key={item.name} speed={50} gap={40} direction={index % 2 === 0 ? 'left' : 'right'}>
           {item.list.map((item) => (
@@ -15,6 +15,6 @@ export default function Skill() {
           ))}
         </Container>
       ))}
-    </>
+    </SectionDivider>
   );
 }

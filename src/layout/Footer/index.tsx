@@ -1,7 +1,7 @@
 import { cn } from '@utils/className';
 import { NavLink } from 'react-router';
-import { AvatarIcon, ToggleTheme } from '@/components';
 import { footerData } from '@data/footer.data';
+import { AvatarIcon, ToggleTheme, SectionDivider } from '@/components/index';
 
 export interface FooterProps {
   className?: string;
@@ -20,8 +20,8 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
     <div
       className={cn('mt-40 w-full bg-gray-50 text-sm/loose text-gray-950 dark:bg-gray-950 dark:text-white', className)}
     >
-      {/* 页脚导航 */}
-      <div className='relative w-full before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:before:bg-white/10 dark:after:bg-white/10'>
+      {/*  contact info （联系方式） */}
+      <SectionDivider>
         <div className='flex w-full flex-col items-center justify-center'>
           <AvatarIcon />
           <ul className='flex gap-4'>
@@ -142,13 +142,10 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
 
           <div>{footerData.top.stats}</div>
         </div>
-      </div>
+      </SectionDivider>
 
-      <div
-        className={
-          'relative before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:before:bg-white/10 dark:after:bg-white/10'
-        }
-      >
+      {/*  footer (页脚导航) */}
+      <SectionDivider>
         <footer className='bg-gray-50 text-sm/loose text-gray-950 dark:bg-gray-950 dark:text-white'>
           {/* 移动端导航列 */}
           <div className='flex gap-4 p-4 *:first:border-l-0 *:last:border-r-0 md:hidden'>
@@ -241,7 +238,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             })}
           </div>
         </footer>
-      </div>
+      </SectionDivider>
 
       {/* 主题切换 + 备案信息 */}
       <div className='px-5 pt-10 pb-15'>
@@ -251,7 +248,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             {footerData.copyright}
           </div>
 
-          {/* 主题切换 Radio 组 */}
+          {/* 主题切换 */}
           <ToggleTheme />
         </div>
       </div>

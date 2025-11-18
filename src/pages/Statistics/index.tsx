@@ -1,6 +1,9 @@
-const Statistics = () => {
+import React from 'react';
+import { SectionDivider } from '@components/index';
+
+const Statistics: React.FC = () => {
   return (
-    <div className='relative h-screen w-full bg-neutral-50 dark:bg-neutral-900'>
+    <SectionDivider className='relative h-screen w-full bg-neutral-50 dark:bg-neutral-900'>
       <iframe
         src='https://cloud.umami.is/share/wRdNzgP3nlS5q0UT'
         title='访问统计面板'
@@ -10,7 +13,7 @@ const Statistics = () => {
         className='h-full w-full rounded-xl border-0 shadow-inner transition-all duration-300'
         allowFullScreen
       />
-    </div>
+    </SectionDivider>
   );
 };
 
