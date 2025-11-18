@@ -1,6 +1,6 @@
 import { tv } from 'tailwind-variants';
 
-//========== floatButton ==========//
+//=============== floatButton ===============//
 export const floatButtonStyle = tv({
   base: `
     inline-flex items-center justify-center
@@ -39,7 +39,7 @@ export const floatButtonStyle = tv({
   },
 });
 
-//========== FloatButtonContent ==========//
+//=============== FloatButtonContent ===============//
 export const FloatButtonContentStyle = tv({
   slots: {
     container: `

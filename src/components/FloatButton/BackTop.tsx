@@ -11,7 +11,7 @@ const BackTop: React.FC<BackTopProps> = (props) => {
   const { icon, duration, visibilityHeight, target, ...rest } = props;
   const [visible, setVisible] = useState<boolean>(visibilityHeight === 0);
 
-  //========== container(容器) ==========//
+  //=============== container(容器) ===============//
   const getDefaultTarget = (): HTMLElement | Document | Window => {
     return window;
   };
@@ -36,12 +36,12 @@ const BackTop: React.FC<BackTopProps> = (props) => {
     };
   }, [target]);
 
-  //========== return to top(返回顶部) ==========//
+  //=============== return to top(返回顶部) ===============//
   const scrollToTop: React.MouseEventHandler<FloatButtonElement> = () => {
     scrollTo(0, { getContainer: target || getDefaultTarget, duration });
   };
 
-  //========== 图标 ==========//
+  //=============== 图标 ===============//
   const mergedIcon = icon ?? <Up />;
 
   return (
