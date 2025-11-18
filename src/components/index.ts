@@ -32,8 +32,8 @@ export type { InfiniteViewBackgroundProps } from './Background/InfiniteViewBackg
 export { default as Button } from './Button/button';
 export type { ButtonVariant, ButtonColor, ButtonSize, ButtonProps } from './Button/interface';
 
-export { default as Tag } from './Tag/index';
-export type { TagProps, TagColor, TagSize } from './Tag/index';
+export { default as Tag } from './Tag/tag';
+export type { TagProps, TagColor, TagSize } from './Tag/interface';
 
 export { default as ToggleTheme } from './toggleTheme/index';
 
