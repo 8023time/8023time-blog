@@ -29,8 +29,8 @@ export type { GridBackgroundProps } from './Background/GridBackground';
 export { default as InfiniteViewBackground } from './Background/InfiniteViewBackground';
 export type { InfiniteViewBackgroundProps } from './Background/InfiniteViewBackground';
 
-export { default as Button } from './Button/index';
-export type { ButtonVariant, ButtonColor, ButtonSize, ButtonProps } from './Button/index';
+export { default as Button } from './Button/button';
+export type { ButtonVariant, ButtonColor, ButtonSize, ButtonProps } from './Button/interface';
 
 export { default as Tag } from './Tag/index';
 export type { TagProps, TagColor, TagSize } from './Tag/index';
