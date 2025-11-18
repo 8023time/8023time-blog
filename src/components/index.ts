@@ -46,3 +46,6 @@ export type {
   BackTopProps,
   FloatButtonElement,
 } from './FloatButton/interface';
+
+export { default as SectionDivider } from './SectionDivider/index';
+export type { SectionDividerProps } from './SectionDivider/interface';
