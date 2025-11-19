@@ -16,6 +16,14 @@ export { Question } from './Icon/Question';
 export { default as QuestionIcon } from './Icon/Question';
 export { Up } from './Icon/Up';
 export { default as UpIcon } from './Icon/Up';
+export { BiliBili } from './Icon/BiliBili';
+export { default as BiliBiliIon } from './Icon/BiliBili';
+export { QQ } from './Icon/QQ';
+export { default as QQIcon } from './Icon/QQ';
+export { Tiktok } from './Icon/Tiktok';
+export { default as TiktokIcon } from './Icon/Tiktok';
+export { Twitter } from './Icon/Twitter';
+export { default as TwitterIcon } from './Icon/Twitter';
 
 export { default as Typewriter } from './Typewriter/index';
 export type { TypewriterProps } from './Typewriter/index';

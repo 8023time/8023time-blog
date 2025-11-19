@@ -1,13 +1,16 @@
+import { BiliBiliIon, QQIcon, TiktokIcon, TwitterIcon, GithubIcon, AvatarIcon } from '@components/index';
+
 export const footerData = {
   top: {
-    stats: '哇，本站居然运行了 400 天 10 小时 10 分 30 秒 🤯😯🎉',
+    avatar: AvatarIcon,
     socialIcons: [
-      { name: 'GitHub', icon: '💻', to: 'https://github.com/8023time' },
-      { name: 'X', icon: '✖️', to: 'https://x.com/Alice577536738' },
-      { name: '知乎', icon: '👨‍🎓', to: 'https://zhihu.com/你的账号' },
-      { name: 'bilibili', icon: '📺', to: 'https://bilibili.com/你的账号' },
-      { name: '微博', icon: '🐦', to: 'https://weibo.com/你的账号' },
+      { name: 'X', icon: TwitterIcon, to: 'https://x.com/Alice577536738' },
+      { name: 'bilibili', icon: BiliBiliIon, to: 'https://space.bilibili.com/1906238729' },
+      { name: 'GitHub', icon: GithubIcon, to: 'https://github.com/8023time' },
+      { name: 'QQ', icon: QQIcon, to: 'https://weibo.com/2162105974' },
+      { name: '抖音', icon: TiktokIcon, to: 'https://zhihu.com/你的账号' },
     ],
+    stats: '哇，本站居然运行了 400 天 10 小时 10 分 30 秒 🤯😯🎉',
   },
 
   categories: [
@@ -25,13 +28,15 @@ export const footerData = {
         { name: '回忆相册', to: '/album' },
         { name: '留言版区', to: '/comments' },
         { name: '音乐天地', to: '/music' },
+        { name: '个人简历', to: '/music' },
       ],
     },
     {
-      title: '我的工具',
+      title: '工具推荐',
       items: [
-        { name: '渐变背景生成器', to: '/tools/gradient' },
+        { name: '图标库', to: 'https://yesicon.app/' },
         { name: '简历修改器', to: '/tools/resume' },
+        { name: '渐变背景生成器', to: 'https://www.lingdaima.com/jianbianse/' },
       ],
     },
     {

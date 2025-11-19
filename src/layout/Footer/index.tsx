@@ -1,7 +1,7 @@
 import { cn } from '@utils/className';
 import { NavLink } from 'react-router';
 import { footerData } from '@data/footer.data';
-import { AvatarIcon, ToggleTheme, SectionDivider } from '@/components/index';
+import { ToggleTheme, SectionDivider } from '@/components/index';
 
 export interface FooterProps {
   className?: string;
@@ -23,121 +23,17 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
       {/*  contact info （联系方式） */}
       <SectionDivider>
         <div className='flex w-full flex-col items-center justify-center'>
-          <AvatarIcon />
+          {footerData.top.avatar && <footerData.top.avatar size={30} />}
           <ul className='flex gap-4'>
-            {/* QQ */}
-            <li>
-              <a
-                href='https://im.qq.com/' /* 替换为你的 QQ/联系链接 */
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label='QQ'
-                className='inline-flex items-center justify-center rounded-md p-2 transition hover:bg-gray-100 dark:hover:bg-white/5'
-              >
-                <svg className='h-6 w-6' viewBox='0 0 24 24' fill='none' aria-hidden>
-                  <path
-                    d='M12 2C7 2 4 5 4 8.5 4 11 6 13 9 13s3-2 6-2 6 2 6 4.5S17 18 12 18s-9-2.5-9-6'
-                    stroke='currentColor'
-                    strokeWidth='1.5'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                  />
-                  <circle cx='9' cy='9' r='0.9' fill='currentColor' />
-                  <circle cx='15' cy='9' r='0.9' fill='currentColor' />
-                </svg>
-              </a>
-            </li>
-
-            {/* GitHub */}
-            <li>
-              <a
-                href='https://github.com/8023time'
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label='GitHub'
-                className='inline-flex items-center justify-center rounded-md p-2 transition hover:bg-gray-100 dark:hover:bg-white/5'
-              >
-                <svg className='h-6 w-6' viewBox='0 0 24 24' fill='none' aria-hidden>
-                  <path
-                    d='M12 2C7.58 2 4 5.58 4 10c0 3.54 2.29 6.54 5.47 7.6.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0112 6.8c.68.003 1.36.09 2 .26 1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38C17.71 16.54 20 13.54 20 10c0-4.42-3.58-8-8-8z'
-                    fill='currentColor'
-                  />
-                </svg>
-              </a>
-            </li>
-
-            {/* X (Twitter) */}
-            <li>
-              <a
-                href='https://x.com/Alice577536738'
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label='X'
-                className='inline-flex items-center justify-center rounded-md p-2 transition hover:bg-gray-100 dark:hover:bg-white/5'
-              >
-                <svg className='h-6 w-6' viewBox='0 0 24 24' fill='none' aria-hidden>
-                  <path
-                    d='M18 5L12 11.2 6 5'
-                    stroke='currentColor'
-                    strokeWidth='1.6'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                  />
-                  <path
-                    d='M6 19l6-6.2L18 19'
-                    stroke='currentColor'
-                    strokeWidth='1.6'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                  />
-                </svg>
-              </a>
-            </li>
-
-            {/* Bilibili */}
-            <li>
-              <a
-                href='https://space.bilibili.com/your-id'
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label='Bilibili'
-                className='inline-flex items-center justify-center rounded-md p-2 transition hover:bg-gray-100 dark:hover:bg-white/5'
-              >
-                <svg className='h-6 w-6' viewBox='0 0 24 24' fill='none' aria-hidden>
-                  <rect x='3' y='6' width='18' height='12' rx='2' stroke='currentColor' strokeWidth='1.5' />
-                  <path d='M8 8.5l1 1M16 8.5l-1 1' stroke='currentColor' strokeWidth='1.5' strokeLinecap='round' />
-                  <rect x='7' y='14' width='10' height='1.2' rx='0.6' fill='currentColor' />
-                </svg>
-              </a>
-            </li>
-
-            {/* 抖音 (Douyin/TikTok) */}
-            <li>
-              <a
-                href='https://www.douyin.com/user/your-id'
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label='抖音'
-                className='inline-flex items-center justify-center rounded-md p-2 transition hover:bg-gray-100 dark:hover:bg-white/5'
-              >
-                <svg className='h-6 w-6' viewBox='0 0 24 24' fill='none' aria-hidden>
-                  <path
-                    d='M15 3v9.5a3.5 3.5 0 11-3.5-3.5V8'
-                    stroke='currentColor'
-                    strokeWidth='1.6'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                  />
-                  <path
-                    d='M9 21V9'
-                    stroke='currentColor'
-                    strokeWidth='1.6'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                  />
-                </svg>
-              </a>
-            </li>
+            {footerData.top.socialIcons.map((item) => {
+              return (
+                <li>
+                  <NavLink to={item.to} target='_blank'>
+                    <item.icon size={20} />
+                  </NavLink>
+                </li>
+              );
+            })}
           </ul>
 
           <div>{footerData.top.stats}</div>
