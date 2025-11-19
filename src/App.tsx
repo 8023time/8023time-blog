@@ -11,7 +11,10 @@ const App: React.FC = () => {
   return (
     <>
       {/* 顶部进度条 */}
-      <motion.div className='fixed top-0 right-0 left-0 z-50 h-1 bg-blue-400' style={{ scaleX: scrollYProgress }} />
+      <motion.div
+        className='fixed top-0 right-0 left-0 z-50 h-1 bg-blue-400'
+        style={{ scaleX: scrollYProgress, originX: 0 }}
+      />
       {/* 上拉按钮 */}
       <FloatButton.BackTop />
       {/* 监听主题切换 */}
