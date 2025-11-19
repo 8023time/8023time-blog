@@ -24,6 +24,13 @@ export { Tiktok } from './Icon/Tiktok';
 export { default as TiktokIcon } from './Icon/Tiktok';
 export { Twitter } from './Icon/Twitter';
 export { default as TwitterIcon } from './Icon/Twitter';
+export { Success } from './Icon/Success';
+export { Error } from './Icon/Error';
+export { Warning } from './Icon/Warning';
+export { FullscreenExit } from './Icon/Fullscreen-exit';
+export { default as FullscreenExitIcon } from './Icon/Fullscreen-exit';
+export { Fullscreen } from './Icon/Fullscreen';
+export { default as FullscreenIcon } from './Icon/Fullscreen';
 
 export { default as Typewriter } from './Typewriter/index';
 export type { TypewriterProps } from './Typewriter/index';
