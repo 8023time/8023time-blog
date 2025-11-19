@@ -2,14 +2,16 @@ import { cn } from '@utils/className';
 import { NavLink } from 'react-router';
 import { Tooltip } from '@components/index';
 import { useThemeStore } from '@store/index';
-import { SunRiseIcon } from '@components/index';
+import { useFullscreen } from '@hooks/index';
 import { MAIN_NAV_CONFIG } from '@data/header.data';
+import { SunRiseIcon, FullscreenIcon, FullscreenExitIcon } from '@components/index';
 
 export interface HeaderProps {
   className?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ className }) => {
+  const { isFullscreen, toggle } = useFullscreen();
   const { theme, setTheme } = useThemeStore();
 
   function handleClick() {
@@ -90,11 +92,19 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
                 </svg>
               </NavLink>
 
-              <Tooltip content='切换黑暗模式' placement='bottom'>
-                <div className='flex items-center'>
-                  <SunRiseIcon alt='SunRise' onClick={handleClick} />
-                </div>
-              </Tooltip>
+              <div className='flex gap-2'>
+                <Tooltip content='切换黑暗模式' placement='bottom'>
+                  <div className='flex items-center'>
+                    <SunRiseIcon alt='SunRise' onClick={handleClick} />
+                  </div>
+                </Tooltip>
+
+                <Tooltip content={isFullscreen ? '退出全屏' : '全屏'} placement='bottom'>
+                  <div className='flex items-center' onClick={toggle}>
+                    {isFullscreen ? <FullscreenExitIcon alt='FullscreenExit' /> : <FullscreenIcon alt='Fullscreen' />}
+                  </div>
+                </Tooltip>
+              </div>
             </div>
 
             {/* 移动端菜单按钮 */}
