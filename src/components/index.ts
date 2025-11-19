@@ -49,3 +49,5 @@ export type {
 
 export { default as SectionDivider } from './SectionDivider/index';
 export type { SectionDividerProps } from './SectionDivider/interface';
+
+export { default as ThemeInitializer } from './ThemeInitializer';

@@ -1,29 +1,8 @@
 import './App.css';
 import type React from 'react';
 import router from '@router/index';
-import { useEffect, useRef } from 'react';
 import { RouterProvider } from 'react-router';
-import { FloatButton } from '@components/index';
-import { useThemeStore, applyThemeToDocument, setupSystemThemeListener } from '@store/index';
-
-const ThemeInitializer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { theme } = useThemeStore();
-  const cleanup = useRef<(() => void) | undefined>(undefined);
-
-  useEffect(() => {
-    if (theme.name === 'System') {
-      const handleSystemChange = () => {
-        applyThemeToDocument('System');
-      };
-      cleanup.current = setupSystemThemeListener(handleSystemChange);
-    }
-    return () => {
-      cleanup.current?.();
-    };
-  }, [theme.name]);
-
-  return <>{children}</>;
-};
+import { FloatButton, ThemeInitializer } from '@components/index';
 
 const App: React.FC = () => {
   return (
