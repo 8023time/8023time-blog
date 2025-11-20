@@ -106,7 +106,7 @@ export const Polaroid: React.FC<PolaroidProps> = ({ photo, containerRef, onDragE
         opacity: 0,
         transition: { duration: 0.2 },
       }}
-      onDragEnd={(e, info) => {
+      onDragEnd={(_e, info) => {
         // Calculate position relative to parent to save state
         // In a real app, we might use getBoundingClientRect,
         // but here we trust framer's offset for simplicity in visual placement
