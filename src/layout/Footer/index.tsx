@@ -23,19 +23,20 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
       {/*  contact info （联系方式） */}
       <SectionDivider>
         <div className='flex w-full flex-col items-center justify-center'>
-          {footerData.top.avatar && <footerData.top.avatar size={30} />}
+          {footerData.top.avatar && <footerData.top.avatar size={40} />}
           <ul className='flex gap-4'>
             {footerData.top.socialIcons.map((item) => {
               return (
                 <li>
                   <NavLink to={item.to} target='_blank'>
-                    <item.icon size={20} />
+                    <button title={item.name}>
+                      <item.icon size={25} />
+                    </button>
                   </NavLink>
                 </li>
               );
             })}
           </ul>
-
           <div>{footerData.top.stats}</div>
         </div>
       </SectionDivider>
@@ -53,7 +54,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                   const groups = chunk(item.items, 3);
                   return (
                     <div className='border-x border-b border-gray-950/5 py-8 pl-2 text-center not-md:border-0 md:border-b-0 dark:border-white/10'>
-                      <h3 className='font-semibold'>{item.title}</h3>
+                      <h3 className='font-semibold text-gray-500'>{item.title}</h3>
                       <ul
                         className='mt-4 grid gap-4 px-10'
                         style={{
@@ -63,8 +64,10 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                         {groups.map((group, groupIndex) => (
                           <li key={groupIndex} className='flex flex-col gap-3'>
                             {group.map((item) => (
-                              <NavLink key={item.to} className='hover:underline' to={item.to}>
-                                {item.name}
+                              <NavLink key={item.to} to={item.to}>
+                                <span className='rounded-lg px-2 py-1 whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-800'>
+                                  {item.name}
+                                </span>
                               </NavLink>
                             ))}
                           </li>
@@ -83,7 +86,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                   const groups = chunk(item.items, 3);
                   return (
                     <div className='border-x border-b border-gray-950/5 py-8 pl-2 text-center not-md:border-0 md:border-b-0 dark:border-white/10'>
-                      <h3 className='font-semibold'>{item.title}</h3>
+                      <h3 className='font-semibold text-gray-500'>{item.title}</h3>
                       <ul
                         className='mt-4 grid gap-4 px-10'
                         style={{
@@ -93,8 +96,10 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                         {groups.map((group, groupIndex) => (
                           <li key={groupIndex} className='flex flex-col gap-3'>
                             {group.map((item) => (
-                              <NavLink key={item.to} className='hover:underline' to={item.to}>
-                                {item.name}
+                              <NavLink key={item.to} to={item.to}>
+                                <span className='rounded-lg px-2 py-1 whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-800'>
+                                  {item.name}
+                                </span>
                               </NavLink>
                             ))}
                           </li>
@@ -112,7 +117,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               const groups = chunk(item.items, 3);
               return (
                 <div className='border-x border-b border-gray-950/5 py-8 pl-2 text-center not-md:border-0 md:border-b-0 dark:border-white/10'>
-                  <h3 className='font-semibold'>{item.title}</h3>
+                  <h3 className='font-semibold text-gray-500'>{item.title}</h3>
                   <ul
                     className='mt-4 grid gap-10 px-10'
                     style={{
@@ -122,8 +127,10 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                     {groups.map((group, groupIndex) => (
                       <li key={groupIndex} className='flex flex-col gap-3'>
                         {group.map((item) => (
-                          <NavLink key={item.to} className='hover:underline' to={item.to}>
-                            {item.name}
+                          <NavLink key={item.to} to={item.to}>
+                            <span className='rounded-lg px-2 py-1 whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-800'>
+                              {item.name}
+                            </span>
                           </NavLink>
                         ))}
                       </li>
