@@ -60,8 +60,9 @@ const Comments: React.FC = () => {
 
       {/* comments（评论） */}
       <SectionDivider className='mt-10 p-2'>
-        <div className='flex h-200 w-full flex-col items-center justify-between border-gray-600 bg-gray-100 dark:border-gray-400 dark:bg-gray-800'>
-          <div className='relative w-full flex-1 overflow-hidden p-3' ref={targetRef}>
+        <div className='flex h-auto w-full flex-col items-center justify-between border-gray-600 bg-gray-100 dark:border-gray-400 dark:bg-gray-800'>
+          {/* 弹幕展示区域 */}
+          <div className='relative aspect-video h-48 w-full flex-1 overflow-hidden sm:h-200' ref={targetRef}>
             {data.map((d, i) => {
               return (
                 <motion.span
@@ -82,34 +83,35 @@ const Comments: React.FC = () => {
               );
             })}
           </div>
-          <div className='flex w-full gap-7 border-t-2 border-t-gray-200 px-4 py-2 dark:border-t-gray-600'>
+          {/* 底部控制栏 */}
+          <div className='flex w-full gap-1 border-t-1 border-t-gray-200 px-1 py-1 sm:gap-7 sm:px-4 sm:py-2 dark:border-t-gray-600'>
             {/* 左侧 */}
-            <div className='flex items-center text-gray-500'>
+            <div className='flex items-center whitespace-nowrap text-gray-500'>
               <div>
                 <span className='px-1'>7</span>
                 人正在看
               </div>
-              <div className='pr-3'>,</div>
-              <div>
+              <div className='hidden pr-3 sm:block'>,</div>
+              <div className='hidden sm:block'>
                 已装填
                 <span className='px-1'>20</span>
                 条弹幕
               </div>
             </div>
             {/* 右侧 */}
-            <div className='flex flex-1 gap-4'>
+            <div className='flex flex-1 gap-1 sm:gap-4'>
               {/* 弹幕设置 */}
               <div className='flex items-center'>
                 <label className='relative flex cursor-pointer items-center select-none'>
                   <input type='checkbox' className='peer hidden' defaultChecked />
 
                   {/* ON */}
-                  <span className='flex h-10 w-10 peer-checked:hidden'>
+                  <span className='h-5 w-5 peer-checked:hidden sm:h-9 sm:w-9'>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
-                      className='fill-current text-gray-400 hover:text-blue-400'
+                      className='flex items-center fill-current text-gray-400 hover:text-blue-400'
                       data-pointer='none'
-                      viewBox='0 0 30 30'
+                      viewBox='0 0 25 25'
                     >
                       <path
                         fill-rule='evenodd'
@@ -126,12 +128,12 @@ const Comments: React.FC = () => {
                   </span>
 
                   {/* OFF */}
-                  <span className='hidden h-10 w-10 peer-checked:flex'>
+                  <span className='hidden h-5 w-5 peer-checked:flex sm:h-9 sm:w-9'>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
                       className='fill-current text-gray-400 hover:text-blue-400'
                       data-pointer='none'
-                      viewBox='0 0 30 30'
+                      viewBox='0 0 25 25'
                     >
                       <path
                         fill-rule='evenodd'
@@ -142,16 +144,17 @@ const Comments: React.FC = () => {
                   </span>
                 </label>
               </div>
+
               {/* 输入部分 */}
               <div className='flex flex-1 justify-between rounded-lg bg-gray-200 dark:bg-gray-950'>
-                <div className='flex-1 p-2'>
+                <div className='flex-1 p-1 sm:p-2'>
                   <input
                     className='bpx-player-dm-input w-full bg-gray-200 focus:border-transparent focus:ring-2 focus:ring-gray-200 focus:outline-none dark:bg-gray-950 dark:focus:ring-gray-950'
                     placeholder='发个友善的弹幕见证当下'
                   />
                 </div>
-                <div className='cursor-pointer rounded-r-lg bg-[#00A0D9] p-2 text-center text-white'>
-                  <button className='cursor-pointer px-3'>发送</button>
+                <div className='cursor-pointer rounded-r-lg bg-[#00A0D9] p-1 text-center text-white sm:p-2'>
+                  <button className='cursor-pointer px-2 whitespace-nowrap sm:px-3'>发送</button>
                 </div>
               </div>
             </div>

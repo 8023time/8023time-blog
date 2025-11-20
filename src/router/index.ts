@@ -35,6 +35,13 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: '/PolaroidPhoto',
+        lazy: async () => {
+          const { default: Component } = await import('@/pages/PolaroidPhoto/index');
+          return { Component };
+        },
+      },
+      {
         path: '/comments',
         lazy: async () => {
           const { default: Component } = await import('@pages/Comments/index');

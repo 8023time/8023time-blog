@@ -23,14 +23,14 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
       {/*  contact info （联系方式） */}
       <SectionDivider>
         <div className='flex w-full flex-col items-center justify-center'>
-          {footerData.top.avatar && <footerData.top.avatar size={40} />}
+          {footerData.top.avatar && <footerData.top.avatar size={42} />}
           <ul className='flex gap-4'>
             {footerData.top.socialIcons.map((item) => {
               return (
                 <li>
                   <NavLink to={item.to} target='_blank'>
                     <button title={item.name}>
-                      <item.icon size={25} />
+                      <item.icon size={26} />
                     </button>
                   </NavLink>
                 </li>
@@ -45,7 +45,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
       <SectionDivider>
         <footer className='bg-gray-50 text-sm/loose text-gray-950 dark:bg-gray-950 dark:text-white'>
           {/* 移动端导航列 */}
-          <div className='flex gap-4 p-4 *:first:border-l-0 *:last:border-r-0 md:hidden'>
+          <div className='flex justify-center gap-4 p-4 *:first:border-l-0 *:last:border-r-0 md:hidden'>
             {/* 左侧为奇数 */}
             <div className='flex flex-1 flex-col gap-10'>
               {footerData.categories

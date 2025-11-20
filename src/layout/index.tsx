@@ -1,7 +1,7 @@
 import Header from './Header';
 import Footer from './Footer';
 import LineLayout from './LineLayout';
-import { Outlet } from 'react-router';
+import { Outlet, ScrollRestoration } from 'react-router';
 
 const Layout = () => {
   return (
@@ -12,6 +12,7 @@ const Layout = () => {
         <div className='flex flex-col'>
           <div className='flex-1'>
             <Outlet />
+            <ScrollRestoration />
           </div>
         </div>
 
