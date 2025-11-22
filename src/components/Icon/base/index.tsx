@@ -41,14 +41,14 @@ export type IconProps = {
 export type IconWrapperProps = Omit<IconProps, 'icon'>;
 
 const Icon: React.FC<IconProps> = React.memo((props) => {
-  const { icon, alt, size = 25, round = true, className, color, onClick, ...rest } = props;
+  const { icon, alt, size = 30, round = true, className, color, onClick, ...rest } = props;
 
   const isString = typeof icon === 'string';
 
   return (
     <div
       className={cn(
-        'relative inline-block rounded-xl p-1.5 transition-colors duration-200 ease-in-out hover:bg-stone-100/50 dark:hover:bg-stone-700/50',
+        'relative inline-block rounded-xl p-2 transition-colors duration-200 ease-in-out hover:bg-stone-200/50 dark:hover:bg-stone-700/50',
         className,
       )}
       style={{

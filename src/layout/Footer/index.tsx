@@ -1,6 +1,6 @@
+import { footerData } from './config';
 import { cn } from '@utils/className';
 import { NavLink } from 'react-router';
-import { footerData } from '@data/footer.data';
 import { ToggleTheme, SectionDivider } from '@/components/index';
 
 export interface FooterProps {

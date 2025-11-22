@@ -31,6 +31,8 @@ export { FullscreenExit } from './Icon/Fullscreen-exit';
 export { default as FullscreenExitIcon } from './Icon/Fullscreen-exit';
 export { Fullscreen } from './Icon/Fullscreen';
 export { default as FullscreenIcon } from './Icon/Fullscreen';
+export { Loading } from './Icon/Loading';
+export { Info } from './Icon/Info';
 
 export { default as Typewriter } from './Typewriter/index';
 export type { TypewriterProps } from './Typewriter/index';

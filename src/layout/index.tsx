@@ -1,4 +1,4 @@
-import Header from './Header';
+import { Header } from './header/index';
 import Footer from './Footer';
 import LineLayout from './LineLayout';
 import { Outlet, ScrollRestoration } from 'react-router';
