@@ -1,4 +1,4 @@
-import { skills } from '@data/skill.data';
+import { skills } from './config';
 import { Container, Logo } from './components/index';
 import { Tag, SectionDivider } from '@components/index';
 
