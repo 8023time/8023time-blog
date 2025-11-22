@@ -28,7 +28,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <ul className='flex gap-4'>
             {footerData.top.socialIcons.map((item) => {
               return (
-                <li>
+                <li key={item.name}>
                   <NavLink to={item.to} target='_blank'>
                     <button title={item.name}>
                       <item.icon size={26} />
@@ -53,11 +53,14 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 .filter((_, index) => index % 2 === 0)
                 .map((data) => {
                   return (
-                    <div className='border-x border-b border-gray-950/5 py-8 pl-2 text-center not-md:border-0 md:border-b-0 dark:border-white/10'>
+                    <div
+                      key={data.title}
+                      className='border-x border-b border-gray-950/5 py-8 pl-2 text-center not-md:border-0 md:border-b-0 dark:border-white/10'
+                    >
                       <h3 className='font-semibold text-gray-500'>{data.title}</h3>
                       <ul className='mt-4 grid gap-4 px-10'>
-                        {data.items.map((item, index) => (
-                          <li key={index} className='flex flex-col gap-3'>
+                        {data.items.map((item) => (
+                          <li key={item.to} className='flex flex-col gap-3'>
                             <NavLink key={item.to} to={item.to}>
                               <span className='rounded-lg px-2 py-1 whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-800'>
                                 {item.name}
@@ -77,12 +80,15 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                 .filter((_, index) => index % 2 === 1)
                 .map((data) => {
                   return (
-                    <div className='border-x border-b border-gray-950/5 py-8 pl-2 text-center not-md:border-0 md:border-b-0 dark:border-white/10'>
+                    <div
+                      key={data.title}
+                      className='border-x border-b border-gray-950/5 py-8 pl-2 text-center not-md:border-0 md:border-b-0 dark:border-white/10'
+                    >
                       <h3 className='font-semibold text-gray-500'>{data.title}</h3>
                       <ul className='mt-4 grid gap-4 px-10'>
-                        {data.items.map((item, index) => (
-                          <li key={index} className='flex flex-col gap-3'>
-                            <NavLink key={item.to} to={item.to}>
+                        {data.items.map((item) => (
+                          <li key={item.name} className='flex flex-col gap-3'>
+                            <NavLink to={item.to}>
                               <span className='rounded-lg px-2 py-1 whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-800'>
                                 {item.name}
                               </span>
@@ -101,7 +107,10 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             {footerData.categories.map((item) => {
               const groups = chunk(item.items, 3);
               return (
-                <div className='border-x border-b border-gray-950/5 py-8 pl-2 text-center not-md:border-0 md:border-b-0 dark:border-white/10'>
+                <div
+                  key={item.title}
+                  className='border-x border-b border-gray-950/5 py-8 pl-2 text-center not-md:border-0 md:border-b-0 dark:border-white/10'
+                >
                   <h3 className='font-semibold text-gray-500'>{item.title}</h3>
                   <ul
                     className='mt-4 grid gap-10 px-10'
@@ -109,8 +118,8 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                       gridTemplateColumns: `repeat(${groups.length}, minmax(0, 1fr))`,
                     }}
                   >
-                    {groups.map((group, groupIndex) => (
-                      <li key={groupIndex} className='flex flex-col gap-3'>
+                    {groups.map((group) => (
+                      <li key={group[0].to} className='flex flex-col gap-3'>
                         {group.map((item) => (
                           <NavLink key={item.to} to={item.to}>
                             <span className='rounded-lg px-2 py-1 whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-800'>

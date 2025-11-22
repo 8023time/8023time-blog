@@ -9,9 +9,9 @@ export function Fullscreen(props: SVGProps<SVGSVGElement>) {
       <path
         fill='none'
         stroke='currentColor'
-        stroke-linecap='round'
-        stroke-linejoin='round'
-        stroke-width='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth={2}
         d='M4 12V4h8m8 0h8v8M4 20v8h8m16-8v8h-8'
       />
     </svg>

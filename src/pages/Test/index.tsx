@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router';
 
 const Test: React.FC = () => {
   return (
@@ -18,9 +19,9 @@ const Test: React.FC = () => {
         <div className='relative mt-10 before:absolute before:top-0 before:-left-[100vw] before:h-px before:w-[200vw] before:bg-gray-950/5 after:absolute after:bottom-0 after:-left-[100vw] after:h-px after:w-[200vw] after:bg-gray-950/5 dark:before:bg-white/10 dark:after:bg-white/10'>
           <p className='prose mx-2 max-w-(--breakpoint-md) text-lg leading-8 text-gray-600 dark:text-gray-400'>
             几乎什么东西都可以，但你不能用它来建造一艘宇宙飞船。不过你绝对可以用它建造宇宙飞船的网站，
-            <a href='https://www.jpl.nasa.gov/' target='_blank' rel='noopener noreferrer'>
+            <NavLink to='https://www.jpl.nasa.gov/' target='_blank' rel='noopener noreferrer'>
               NASA
-            </a>
+            </NavLink>
             就是这么做的。
           </p>
         </div>

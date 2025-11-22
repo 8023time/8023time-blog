@@ -1,7 +1,8 @@
 import type React from 'react';
+import { NavLink } from 'react-router';
 import { Typewriter } from '@components/ui';
-import { Github, BiliBili, Twitter, QQ } from '@components/icons';
 import { SectionDivider } from '@components/layout/SectionDivider';
+import { Github, BiliBili, Twitter, QQ, Tiktok } from '@components/icons';
 
 const floatAnimationStyles = `
   @keyframes float {
@@ -24,6 +25,7 @@ const Home: React.FC = () => {
     { icon: <BiliBili className='h-5 w-5' />, href: 'https://bilibili.com/1906238729', label: 'Bilibili' },
     { icon: <Twitter className='h-5 w-5' />, href: 'https://twitter.com/Alice577536738', label: 'Twitter' },
     { icon: <QQ className='h-5 w-5' />, href: 'https://weibo.com/2162105974', label: 'QQ' },
+    { icon: <Tiktok className='h-5 w-5' />, href: 'https://www.tiktok.com/@8023time', label: 'Tiktok' },
   ];
 
   return (
@@ -71,17 +73,16 @@ const Home: React.FC = () => {
             </div>
 
             <div className='flex flex-wrap justify-center gap-4 pt-4 md:justify-start'>
-              {socialLinks.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.href}
-                  aria-label={item.label}
+              {socialLinks.map((item) => (
+                <NavLink
+                  to={item.href}
+                  key={item.href}
                   className='group flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br text-white shadow-lg shadow-pink-500/20 transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-pink-500/40 md:h-12 md:w-12'
                 >
                   <span className='flex items-center justify-center [&>svg]:h-5 [&>svg]:w-5 md:[&>svg]:h-6 md:[&>svg]:w-6'>
                     {item.icon}
                   </span>
-                </a>
+                </NavLink>
               ))}
             </div>
           </div>

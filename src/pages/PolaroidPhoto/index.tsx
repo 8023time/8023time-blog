@@ -1,4 +1,5 @@
 import { useId } from 'react';
+import { NavLink } from 'react-router';
 import type { PolaroidPhoto } from './type';
 import { Camera } from './components/Camera';
 import React, { useState, useRef } from 'react';
@@ -114,13 +115,13 @@ const PolaroidPhoto: React.FC = () => {
       <SectionDivider className='mt-10'>
         <p className='prose mx-2 max-w-(--breakpoint-md) text-lg leading-8 text-gray-600 dark:text-gray-400'>
           从推特上阅读到一篇文章,挺有创意的，于是把代码加到这个模块中，（
-          <a
+          <NavLink
             className='rounded-2xl bg-blue-200 p-1 underline underline-offset-2'
             target='_blank'
-            href='https://x.com/ann_nnng/status/1991079810882265254?s=20'
+            to='https://x.com/ann_nnng/status/1991079810882265254?s=20'
           >
             点击此处访问原帖
-          </a>
+          </NavLink>
           ）
         </p>
       </SectionDivider>

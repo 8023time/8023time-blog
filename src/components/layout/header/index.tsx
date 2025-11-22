@@ -19,16 +19,14 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
           <div className='flex h-14 items-center justify-between gap-8 px-4 sm:px-6'>
             {/* Logo */}
             <div className='flex items-center gap-4'>
-              <a className='shrink-0' aria-label='Home' href='/'>
-                <NavLink to='/'>
-                  <div className='flex items-center gap-5'>
-                    <img src='/avatar.jpg' width={25} />
-                    <span className='text-center font-sans text-lg font-bold text-gray-950 dark:text-white'>
-                      8023time
-                    </span>
-                  </div>
-                </NavLink>
-              </a>
+              <NavLink to='/' className='shrink-0' aria-label='Home'>
+                <div className='flex items-center gap-5'>
+                  <img src='/avatar.jpg' width={25} />
+                  <span className='text-center font-sans text-lg font-bold text-gray-950 dark:text-white'>
+                    8023time
+                  </span>
+                </div>
+              </NavLink>
             </div>
 
             {/* 桌面端菜单 */}

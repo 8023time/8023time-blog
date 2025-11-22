@@ -31,3 +31,5 @@ export type {
   BackTopProps,
   FloatButtonElement,
 } from './FloatButton/interface';
+
+export { Loading, FullPageLoading } from './loading';
