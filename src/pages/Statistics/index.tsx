@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionDivider } from '@components/index';
+import { SectionDivider } from '@components/layout/SectionDivider';
 
 const Statistics: React.FC = () => {
   return (

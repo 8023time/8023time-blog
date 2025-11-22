@@ -3,8 +3,8 @@ import type { PolaroidPhoto } from './type';
 import { Camera } from './components/Camera';
 import React, { useState, useRef } from 'react';
 import { Polaroid } from './components/Polaroid';
-import { SectionDivider } from '@components/index';
 import { motion, AnimatePresence } from 'motion/react';
+import { SectionDivider } from '@components/layout/SectionDivider';
 
 // Mock Captions since we removed the AI library
 const MOCK_CAPTIONS = [

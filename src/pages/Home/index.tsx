@@ -1,6 +1,7 @@
 import type React from 'react';
-import { Typewriter, SectionDivider } from '@components/index';
-import { Github, BiliBili, Twitter, QQ } from '@components/index';
+import { Typewriter } from '@components/ui';
+import { Github, BiliBili, Twitter, QQ } from '@components/icons';
+import { SectionDivider } from '@components/layout/SectionDivider';
 
 const floatAnimationStyles = `
   @keyframes float {

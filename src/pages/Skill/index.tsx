@@ -1,6 +1,7 @@
 import { skills } from './config';
+import { Tag } from '@components/ui';
 import { Container, Logo } from './components/index';
-import { Tag, SectionDivider } from '@components/index';
+import { SectionDivider } from '@components/layout/SectionDivider';
 
 export default function Skill() {
   return (

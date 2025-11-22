@@ -1,4 +1,4 @@
-import Layout from '@layout/index';
+import Layout from '@layout/root';
 import { createBrowserRouter } from 'react-router';
 
 const router = createBrowserRouter([
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
       {
         path: '*',
         lazy: async () => {
-          const { default: Component } = await import('@pages/404/404');
+          const { default: Component } = await import('@components/common/404');
           return { Component };
         },
       },

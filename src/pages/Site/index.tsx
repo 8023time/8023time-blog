@@ -1,6 +1,6 @@
 import { siteData } from './config';
 import { NavLink } from 'react-router';
-import { SiteCard } from '@components/Card';
+import { SiteCard } from '@components/ui/Card';
 
 const Site = () => {
   return (

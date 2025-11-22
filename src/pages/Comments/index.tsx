@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
-import { SectionDivider } from '@components/index';
 import React, { useMemo, useRef, useLayoutEffect } from 'react';
+import { SectionDivider } from '@components/layout/SectionDivider';
 
 const data = [
   { id: 1, text: '刚到这一章，好紧张啊' },

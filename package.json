@@ -69,7 +69,6 @@
     "remark-gfm": "^4.0.1",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
-    "sass": "^1.93.3",
     "shiki": "^3.14.0",
     "standard-version": "^9.5.0",
     "tailwindcss": "^4.1.16",

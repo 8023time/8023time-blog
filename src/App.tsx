@@ -1,9 +1,10 @@
-import './App.css';
 import type React from 'react';
+import '@styles/tailwindcss.css';
 import router from '@router/index';
+import { FloatButton } from '@components/ui';
 import { RouterProvider } from 'react-router';
 import { useScroll, motion } from 'motion/react';
-import { FloatButton, ThemeInitializer } from '@components/index';
+import { ThemeInitializer } from '@components/common/ThemeInitializer';
 
 const App: React.FC = () => {
   const { scrollYProgress } = useScroll();
