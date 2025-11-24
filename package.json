@@ -8,16 +8,15 @@
   "type": "module",
   "scripts": {
     "open": "vite",
-    "translate": "tsx scripts/md-to-tsx/index.ts",
-    "translate:enhanced": "tsx scripts/md-to-tsx/index-enhanced.ts",
-    "lint": "eslint .",
     "preview": "vite preview",
     "build": "tsc -b && vite build",
-    "prettier": "prettier --write .",
+    "release": "standard-version",
     "prepare": "husky install",
-    "pre-commit": "lint-staged",
-    "commit-lint": "commitlint --config commitlint.config.js",
-    "release": "standard-version"
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier --write .",
+    "lint:lint-staged": "lint-staged",
+    "translate": "tsx scripts/md-to-tsx/index.ts",
+    "translate:enhanced": "tsx scripts/md-to-tsx/index-enhanced.ts"
   },
   "config": {
     "commitizen": {

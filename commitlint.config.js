@@ -1,7 +1,16 @@
 import { defineConfig } from 'cz-git';
 
 export default defineConfig({
+  extends: ['@commitlint/config-conventional'],
+  parserPreset: {
+    parserOpts: {
+      // 支持可选 emoji + type + subject
+      headerPattern: /^(\p{Emoji_Presentation}?\s?(\w+)):\s(.+)$/u,
+      headerCorrespondence: ['emoji', 'type', 'subject'],
+    },
+  },
   rules: {
+    'subject-full-stop': [0, 'never'], // 不检查末尾句号
     'type-enum': [
       2,
       'always',
@@ -26,7 +35,11 @@ export default defineConfig({
       { value: 'feat', name: 'feat:     🚀  新增功能 | A new feature', emoji: '🚀' },
       { value: 'fix', name: 'fix:      🐞  修复缺陷 | A bug fix', emoji: '🐞' },
       { value: 'docs', name: 'docs:     📚  文档更新 | Documentation only changes', emoji: '📚' },
-      { value: 'style', name: 'style:    🎨  Changes that do not affect the meaning of the code', emoji: ':lipstick:' },
+      {
+        value: 'style',
+        name: 'style:    🎨  修改样式 | Changes that do not affect the meaning of the code',
+        emoji: '🎨',
+      },
       {
         value: 'refactor',
         name: 'refactor: ♻️   代码重构 | A code change that neither fixes a bug nor adds a feature',
