@@ -56,7 +56,7 @@ const defaultProps = {
   hoverFillColor: '#222',
 };
 
-export const FluidGrid: FC<GridBackgroundProps> = ({
+export const FluidGrid: React.FC<GridBackgroundProps> = ({
   direction = defaultProps.direction,
   speed = defaultProps.speed,
   borderColor = defaultProps.borderColor,
