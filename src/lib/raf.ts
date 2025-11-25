@@ -27,7 +27,7 @@ function cleanup(id: number) {
 // =======================================================
 // wrapperRaf：支持 multi-frame 延迟执行
 // =======================================================
-export const raf = (callback: () => void, frames = 1): number => {
+const raf = (callback: () => void, frames = 1): number => {
   taskId += 1;
   const id = taskId;
 
@@ -56,4 +56,4 @@ raf.cancel = (id: number) => {
   if (realId !== null) nativeCAF(realId!);
 };
 
-export default raf;
+export { raf };

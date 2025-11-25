@@ -1,7 +1,7 @@
-import React from 'react';
+import type { FC } from 'react';
 import { SectionDivider } from '@components/layout/SectionDivider';
 
-const Album: React.FC = () => {
+const Album: FC = () => {
   return (
     <>
       <div className='mx-2 mt-24 font-mono text-sm/7 font-medium tracking-widest text-gray-500 uppercase'>8023time</div>

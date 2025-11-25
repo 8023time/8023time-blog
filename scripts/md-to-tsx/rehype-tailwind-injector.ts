@@ -1,7 +1,7 @@
 import { h } from 'hastscript';
 import type { Root } from 'hast';
 import { visit } from 'unist-util-visit';
-import { cn } from '@/lib/className';
+import { cn } from '@/lib/class-name';
 import { tailwindMap } from '@styles/markdown-styles.ts';
 
 /**

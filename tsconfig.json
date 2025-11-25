@@ -13,7 +13,7 @@
       "@router/*": ["src/router/*"],
       "@generated/*": ["src/generated/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@store/*": ["src/store/*"]
+      "@atoms/*": ["src/atoms/*"]
     }
   },
   "exclude": ["node_modules", "dist"]

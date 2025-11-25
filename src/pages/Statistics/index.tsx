@@ -1,7 +1,7 @@
-import React from 'react';
+import type { FC } from 'react';
 import { SectionDivider } from '@components/layout/SectionDivider';
 
-const Statistics: React.FC = () => {
+const Statistics: FC = () => {
   return (
     <SectionDivider className='relative h-screen w-full bg-neutral-50 dark:bg-neutral-900'>
       <iframe

@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@lib/className';
+import { cn } from '@/lib/class-name';
 
 export interface LogoProps {
   src: string;

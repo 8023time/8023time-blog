@@ -1,5 +1,6 @@
+import type { FC } from 'react';
 import { motion } from 'motion/react';
-import React, { useMemo, useRef, useLayoutEffect } from 'react';
+import { useMemo, useState, useRef, useLayoutEffect } from 'react';
 import { SectionDivider } from '@components/layout/SectionDivider';
 
 const data = [
@@ -25,9 +26,9 @@ const data = [
   { id: 20, text: '这段台词好经典' },
 ];
 
-const Comments: React.FC = () => {
+const Comments: FC = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
-  const [maxTracks, setMaxTracks] = React.useState(0);
+  const [maxTracks, setMaxTracks] = useState(0);
 
   const trackHeight = 25;
 

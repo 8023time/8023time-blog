@@ -1,6 +1,6 @@
-import Layout from '@layout/root';
-import { FullPageLoading as Loading } from '@components/ui/index';
+import { Layout } from '@layout/root';
 import { createBrowserRouter } from 'react-router';
+import { FullPageLoading } from '@components/ui/loading';
 
 const router = createBrowserRouter([
   {
@@ -9,7 +9,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        hydrateFallbackElement: <Loading />,
+        hydrateFallbackElement: <FullPageLoading />,
         lazy: async () => {
           const { default: Component } = await import('@pages/Home/index');
           return { Component };
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/skill',
-        hydrateFallbackElement: <Loading />,
+        hydrateFallbackElement: <FullPageLoading />,
         lazy: async () => {
           const { default: Component } = await import('@pages/Skill/index');
           return { Component };
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/test',
-        hydrateFallbackElement: <Loading />,
+        hydrateFallbackElement: <FullPageLoading />,
         lazy: async () => {
           const { default: Component } = await import('@pages/Test/index');
           return { Component };
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/site',
-        hydrateFallbackElement: <Loading />,
+        hydrateFallbackElement: <FullPageLoading />,
         lazy: async () => {
           const { default: Component } = await import('@/pages/Site/index');
           return { Component };
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/PolaroidPhoto',
-        hydrateFallbackElement: <Loading />,
+        hydrateFallbackElement: <FullPageLoading />,
         lazy: async () => {
           const { default: Component } = await import('@/pages/PolaroidPhoto/index');
           return { Component };
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/comments',
-        hydrateFallbackElement: <Loading />,
+        hydrateFallbackElement: <FullPageLoading />,
         lazy: async () => {
           const { default: Component } = await import('@pages/Comments/index');
           return { Component };
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/statistics',
-        hydrateFallbackElement: <Loading />,
+        hydrateFallbackElement: <FullPageLoading />,
         lazy: async () => {
           const { default: Component } = await import('@pages/Statistics/index');
           return { Component };
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/album',
-        hydrateFallbackElement: <Loading />,
+        hydrateFallbackElement: <FullPageLoading />,
         lazy: async () => {
           const { default: Component } = await import('@pages/album/index');
           return { Component };
@@ -73,7 +73,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/docs',
-        hydrateFallbackElement: <Loading />,
+        hydrateFallbackElement: <FullPageLoading />,
         lazy: async () => {
           const { default: Component } = await import('@pages/Docs/index');
           return { Component };
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: ':name',
-            hydrateFallbackElement: <Loading />,
+            hydrateFallbackElement: <FullPageLoading />,
             lazy: async () => {
               const { default: Component } = await import('@pages/Docs/index');
               return { Component };
@@ -91,7 +91,7 @@ const router = createBrowserRouter([
       },
       {
         path: '*',
-        hydrateFallbackElement: <Loading />,
+        hydrateFallbackElement: <FullPageLoading />,
         lazy: async () => {
           const { default: Component } = await import('@components/common/404');
           return { Component };

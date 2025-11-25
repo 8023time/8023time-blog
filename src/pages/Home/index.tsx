@@ -1,6 +1,6 @@
-import type React from 'react';
+import type { FC } from 'react';
 import { NavLink } from 'react-router';
-import { Typewriter } from '@components/ui';
+import { Typewriter } from '@components/ui/typewriter';
 import { SectionDivider } from '@components/layout/SectionDivider';
 import { Github, BiliBili, Twitter, QQ, Tiktok } from '@components/icons';
 
@@ -19,7 +19,7 @@ const floatAnimationStyles = `
     50% { transform: translateY(-3px); }
   }`;
 
-const Home: React.FC = () => {
+const Home: FC = () => {
   const socialLinks = [
     { icon: <Github className='h-5 w-5' />, href: 'https://github.com/8023time', label: 'Github' },
     { icon: <BiliBili className='h-5 w-5' />, href: 'https://bilibili.com/1906238729', label: 'Bilibili' },

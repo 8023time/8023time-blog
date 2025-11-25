@@ -1,5 +1,5 @@
 import { skills } from './config';
-import { Tag } from '@components/ui';
+import { Tag } from '@components/ui/tag';
 import { Container, Logo } from './components/index';
 import { SectionDivider } from '@components/layout/SectionDivider';
 

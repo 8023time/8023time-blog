@@ -1,10 +1,10 @@
-import React from 'react';
+import type { ReactNode, FC } from 'react';
 
 interface LineLayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-export const LineLayout: React.FC<LineLayoutProps> = ({ children }) => {
+export const LineLayout: FC<LineLayoutProps> = ({ children }) => {
   return (
     <>
       <div className='isolate bg-gray-50 dark:bg-gray-950'>

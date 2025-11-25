@@ -1,8 +1,8 @@
-import { cn } from '@lib/className';
+import { cn } from '@/lib/class-name';
 import { NavLink } from 'react-router';
-import { Tooltip } from '@components/ui';
 import { MAIN_NAV_CONFIG } from './config';
-import { useFullscreen } from '@hooks/useFullscreen';
+import { Tooltip } from '@components/ui/tooltip';
+import { useFullscreen } from '@/hooks/use-full-screen';
 import { FullscreenIcon, FullscreenExitIcon } from '@components/icons';
 
 interface HeaderProps {

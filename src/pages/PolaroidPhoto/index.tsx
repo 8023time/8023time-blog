@@ -1,8 +1,9 @@
 import { useId } from 'react';
+import type { FC } from 'react';
 import { NavLink } from 'react-router';
+import { useState, useRef } from 'react';
 import type { PolaroidPhoto } from './type';
 import { Camera } from './components/Camera';
-import React, { useState, useRef } from 'react';
 import { Polaroid } from './components/Polaroid';
 import { motion, AnimatePresence } from 'motion/react';
 import { SectionDivider } from '@components/layout/SectionDivider';
@@ -36,7 +37,7 @@ const generatePhotoCaption = async (_base64Image: string): Promise<string> => {
   return MOCK_CAPTIONS[randomIndex];
 };
 
-const PolaroidPhoto: React.FC = () => {
+const PolaroidPhoto: FC = () => {
   const [photos, setPhotos] = useState<PolaroidPhoto[]>([]);
   const [isProcessing, setIsProcessing] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);

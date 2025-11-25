@@ -1,14 +1,14 @@
-import { cn } from '@lib/className';
+import { cn } from '@/lib/class-name';
 import { footerData } from './config';
 import { NavLink } from 'react-router';
-import { ToggleTheme } from '@components/common/toggleTheme';
+import { ThemeSwitcher } from '@components/ui/theme-switcher';
 import { SectionDivider } from '@components/layout/SectionDivider';
 
 export interface FooterProps {
   className?: string;
 }
 
-const Footer: React.FC<FooterProps> = ({ className }) => {
+export const Footer: React.FC<FooterProps> = ({ className }) => {
   const chunk = <T,>(arr: T[], size: number): T[][] => {
     const result: T[][] = [];
     for (let i = 0; i < arr.length; i += size) {
@@ -144,13 +144,9 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <div className='grid place-items-center text-sm/6 text-gray-700 sm:flex-row sm:gap-2 sm:pr-4 dark:text-gray-400'>
             {footerData.copyright}
           </div>
-
-          {/* 主题切换 */}
-          <ToggleTheme />
+          <ThemeSwitcher />
         </div>
       </div>
     </div>
   );
 };
-
-export default Footer;

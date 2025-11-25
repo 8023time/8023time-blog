@@ -16,7 +16,7 @@ export default defineConfig({
       '@router': fileURLToPath(new URL('./src/router', import.meta.url)),
       '@generated': fileURLToPath(new URL('./src/generated', import.meta.url)),
       '@hooks': fileURLToPath(new URL('./src/hooks', import.meta.url)),
-      '@store': fileURLToPath(new URL('./src/store', import.meta.url)),
+      '@atoms': fileURLToPath(new URL('./src/atoms', import.meta.url)),
     },
   },
 });

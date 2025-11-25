@@ -1,5 +1,5 @@
-import React from 'react';
-import { cn } from '@lib/className';
+import type { FC } from 'react';
+import { cn } from '@/lib/class-name';
 
 export interface LoadingProps {
   text?: string;
@@ -8,7 +8,7 @@ export interface LoadingProps {
 
 const defaultLoadingText = '别着急，坐和放宽，慢慢来';
 
-export const Loading: React.FC<LoadingProps> = (props) => {
+export const Loading: FC<LoadingProps> = (props) => {
   const { text, className, ...rest } = props;
 
   const renderText = text ?? defaultLoadingText;
