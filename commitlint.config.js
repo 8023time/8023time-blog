@@ -1,16 +1,14 @@
 import { defineConfig } from 'cz-git';
 
 export default defineConfig({
-  extends: ['@commitlint/config-conventional'],
-  parserPreset: {
-    parserOpts: {
-      // 支持可选 emoji + type + subject
-      headerPattern: /^(\p{Emoji_Presentation}?\s?(\w+)):\s(.+)$/u,
-      headerCorrespondence: ['emoji', 'type', 'subject'],
-    },
-  },
+  // extends: ['@commitlint/config-conventional'],
+  // parserPreset: {
+  //   parserOpts: {
+  //     headerPattern: /^(\p{Extended_Pictographic}\s*)?(\w+)(?:\([^)]*\))?:\s*(.+)$/u,
+  //     headerCorrespondence: ['emoji', 'type', 'subject'],
+  //   },
+  // },
   rules: {
-    'subject-full-stop': [0, 'never'], // 不检查末尾句号
     'type-enum': [
       2,
       'always',
@@ -55,6 +53,21 @@ export default defineConfig({
         value: 'chore',
         name: 'chore:    🔧  其他修改 | Other changes that do not modify src or test files',
         emoji: '🔧',
+      },
+      {
+        value: 'revert',
+        name: 'revert:   ⏪️  回滚代码 | Revert to a commit',
+        emoji: '⏪️',
+      },
+      {
+        value: 'build',
+        name: 'build:    📦️  构建打包 | Changes that affect the build system or external dependencies',
+        emoji: '📦️',
+      },
+      {
+        value: 'ci',
+        name: 'ci:       🎡️  CI相关   | Changes to our CI configuration files and scripts',
+        emoji: '🎡️',
       },
     ],
     useEmoji: true,

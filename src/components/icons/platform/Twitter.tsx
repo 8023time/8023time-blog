@@ -1,7 +1,7 @@
 import type React from 'react';
-import Icon from './base/index';
+import Icon from '../base/index';
 import type { SVGProps } from 'react';
-import type { IconWrapperProps } from './base/index';
+import type { IconWrapperProps } from '../base/index';
 
 export function Twitter(props: SVGProps<SVGSVGElement>) {
   return (
