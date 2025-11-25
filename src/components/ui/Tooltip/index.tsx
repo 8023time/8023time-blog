@@ -1,4 +1,4 @@
-import { cn } from '@/utils/className';
+import { cn } from '@lib/className';
 import type { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { tooltipStyle } from './style/index';

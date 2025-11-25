@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@/utils/className';
+import { cn } from '@lib/className';
 import { buttonStyle } from './style/index';
 import type { ButtonProps } from './interface';
 

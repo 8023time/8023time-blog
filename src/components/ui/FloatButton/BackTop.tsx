@@ -1,7 +1,7 @@
 import { Up } from '@components/icons';
-import scrollTo from '@/utils/scrollTo';
+import scrollTo from '@lib/scrollTo';
 import FloatButton from './FloatButton';
-import getScroll from '@/utils/getScroll';
+import getScroll from '@lib/getScroll';
 import type { BackTopProps } from './interface';
 import React, { useState, useEffect } from 'react';
 import type { FloatButtonElement } from './interface';

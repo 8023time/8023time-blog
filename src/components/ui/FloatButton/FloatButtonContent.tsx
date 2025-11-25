@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@utils/className';
+import { cn } from '@lib/className';
 import { Question } from '@components/icons';
 import { FloatButtonContentStyle } from './style/indx';
 import type { FloatButtonContentProps } from './interface';

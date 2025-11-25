@@ -1,4 +1,4 @@
-import { cn } from '@/utils/className';
+import { cn } from '@lib/className';
 import { NavLink } from 'react-router';
 import { Tooltip } from '@components/ui';
 import { MAIN_NAV_CONFIG } from './config';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@utils/className';
+import { cn } from '@lib/className';
 
 export interface LoadingProps {
   text?: string;

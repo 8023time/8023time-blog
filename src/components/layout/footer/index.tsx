@@ -1,5 +1,5 @@
+import { cn } from '@lib/className';
 import { footerData } from './config';
-import { cn } from '@/utils/className';
 import { NavLink } from 'react-router';
 import { ToggleTheme } from '@components/common/toggleTheme';
 import { SectionDivider } from '@components/layout/SectionDivider';

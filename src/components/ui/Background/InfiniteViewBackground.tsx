@@ -1,4 +1,4 @@
-import { cn } from '@/utils/className';
+import { cn } from '@lib/className';
 import { useState, useEffect, useRef } from 'react';
 
 /**

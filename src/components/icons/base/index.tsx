@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@/utils/className';
+import { cn } from '@lib/className';
 
 /**
  * @description: 图标组件属性

@@ -1,6 +1,6 @@
 import React from 'react';
 import type BackTop from './BackTop';
-import { cn } from '@utils/className';
+import { cn } from '@lib/className';
 import { floatButtonStyle } from './style/indx';
 import type { FloatButtonProps } from './interface';
 import FloatButtonContent from './FloatButtonContent';

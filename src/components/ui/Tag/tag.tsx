@@ -1,5 +1,5 @@
 import type React from 'react';
-import { cn } from '@/utils/className';
+import { cn } from '@lib/className';
 import type { MouseEvent } from 'react';
 import { TagStyle } from './style/index';
 import type { TagProps } from './interface';
