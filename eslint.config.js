@@ -1,34 +1,52 @@
 import js from '@eslint/js';
 import globals from 'globals';
+import next from 'eslint-config-next';
 import tseslint from 'typescript-eslint';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
+import pluginReact from 'eslint-plugin-react';
+import pluginPrettier from 'eslint-plugin-prettier';
+import prettierConfig from 'eslint-config-prettier';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
-  globalIgnores(['dist', 'build']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      js.configs.recommended,
-      tseslint.configs.recommended,
-      reactHooks.configs['recommended-latest'],
-      reactRefresh.configs.vite,
-    ],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-    },
-    rules: {
-      // JavaScript 规则
-      'no-console': ['warn', { allow: ['error', 'warn'] }], // 警告 console.log，但允许 console.error
-      eqeqeq: 'error', // 强制使用 === 而非 ==
+  globalIgnores([
+    '**/node_modules/**',
+    '**/dist/**',
+    '**/build/**',
+    '**/coverage/**',
+    '**/*.d.ts',
+    '.next/**',
+    'pnpm.lock.yaml',
+    'tsconfig.json',
+  ]),
 
-      // TypeScript 规则
-      '@typescript-eslint/no-explicit-any': 'error', // 禁止使用 any 类型
+  ...next,
+
+  {
+    ...js.configs.recommended,
+    name: 'js-base',
+    files: ['**/*.{js,mjs,cjs}'],
+    languageOptions: { globals: globals.browser },
+  },
+
+  ...tseslint.configs.recommended.map((config) => ({
+    ...config,
+    files: ['**/*.{ts,tsx,mts,cts}'],
+  })),
+
+  {
+    name: 'react-ui',
+    files: ['**/*.{jsx,tsx}'],
+    plugins: { react: pluginReact },
+    rules: {
+      'react/react-in-jsx-scope': 'off',
+      // 需要额外覆盖时在此添加
     },
   },
+
   {
-    ignores: ['dist', 'build', 'node_modules', 'public', 'src/generated'],
+    name: 'prettier',
+    files: ['**/*.{js,jsx,ts,tsx,mjs,cjs,mts,cts}'],
+    plugins: { prettier: pluginPrettier },
+    rules: { 'prettier/prettier': 'error', ...prettierConfig.rules },
   },
 ]);

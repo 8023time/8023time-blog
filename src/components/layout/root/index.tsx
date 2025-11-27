@@ -1,25 +1,17 @@
 import { Footer } from '../footer/index';
-import { Header } from '../header/index';
-import { useMatches } from 'react-router';
-import { Outlet, ScrollRestoration } from 'react-router';
+import { Header } from '../header/Header';
+import type { FC, ReactNode } from 'react';
 import { LineLayout } from '@components/layout/lineLayout/index';
 
-export const Layout = () => {
-  const matches = useMatches();
-  const currentRoute = matches[matches.length - 1] as { handle: { hideFooter: boolean } };
-  const hideFooter = currentRoute?.handle?.hideFooter ?? false;
-
+export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <>
       <LineLayout>
         <Header />
 
         <div className='flex flex-col'>
-          <div className='flex-1'>
-            <Outlet />
-            <ScrollRestoration />
-          </div>
-          {!hideFooter && <Footer />}
+          <div className='flex-1'>{children}</div>
+          <Footer />
         </div>
       </LineLayout>
     </>

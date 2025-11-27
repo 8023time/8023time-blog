@@ -58,7 +58,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.validate": ["javascript", "typescript", "typescriptreact", "json", "css"],
   "typescript.tsdk": "./node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"

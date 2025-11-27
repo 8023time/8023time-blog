@@ -1,6 +1,4 @@
-import Icon from './base/index';
 import type { SVGProps } from 'react';
-import type { IconWrapperProps } from './base/index';
 
 export function Up(props?: SVGProps<SVGSVGElement>) {
   return (
@@ -13,9 +11,3 @@ export function Up(props?: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-
-const UpIcon = (props: IconWrapperProps) => {
-  return <Icon icon={<Up />} {...props} />;
-};
-
-export default UpIcon;

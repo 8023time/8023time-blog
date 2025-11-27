@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { cn } from '@/lib/class-name';
-import { Question } from '@components/icons';
+import { Question } from '@components/icons/question';
 import { FloatButtonContentStyle } from './style/indx';
 import type { FloatButtonContentProps } from './interface';
 

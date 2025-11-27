@@ -1,7 +1,4 @@
-import type React from 'react';
-import Icon from './base/index';
 import type { SVGProps } from 'react';
-import type { IconWrapperProps } from './base/index';
 
 export function Question(props: SVGProps<SVGSVGElement>) {
   return (
@@ -13,9 +10,3 @@ export function Question(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-
-const QuestionIcon: React.FC<IconWrapperProps> = (props) => {
-  return <Icon icon={<Question />} {...props}></Icon>;
-};
-
-export default QuestionIcon;

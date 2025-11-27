@@ -37,48 +37,51 @@ export const Tooltip: FC<
 
   //================= 计算位置 =================//
 
-  const updatePosition = useCallback(() => {
-    const trigger = triggerRef.current;
-    const tooltip = tooltipRef.current;
-    if (!trigger || !tooltip) {
-      requestAnimationFrame(updatePosition);
-      return;
-    }
+  const updatePosition = useCallback(
+    function interUpdatePosition() {
+      const trigger = triggerRef.current;
+      const tooltip = tooltipRef.current;
+      if (!trigger || !tooltip) {
+        requestAnimationFrame(interUpdatePosition);
+        return;
+      }
 
-    const tRect = trigger.getBoundingClientRect();
-    const tipRect = tooltip.getBoundingClientRect();
-    const scrollY = window.scrollY;
-    const scrollX = window.scrollX;
+      const tRect = trigger.getBoundingClientRect();
+      const tipRect = tooltip.getBoundingClientRect();
+      const scrollY = window.scrollY;
+      const scrollX = window.scrollX;
 
-    const arrowSize = arrow ? 6 : 0;
-    const visualGap = arrow ? 4 : 3;
-    const totalOffset = visualGap + arrowSize;
+      const arrowSize = arrow ? 6 : 0;
+      const visualGap = arrow ? 4 : 3;
+      const totalOffset = visualGap + arrowSize;
 
-    const positions: Record<TooltipPlacement, { top: number; left: number }> = {
-      top: { top: tRect.top - tipRect.height - totalOffset, left: tRect.left + (tRect.width - tipRect.width) / 2 },
-      bottom: { top: tRect.bottom + totalOffset, left: tRect.left + (tRect.width - tipRect.width) / 2 },
-      left: {
-        top: tRect.top + (tRect.height - tipRect.height) / 2,
-        left: tRect.left - tipRect.width - totalOffset,
-      },
-      right: { top: tRect.top + (tRect.height - tipRect.height) / 2, left: tRect.right + totalOffset },
+      const positions: Record<TooltipPlacement, { top: number; left: number }> = {
+        top: { top: tRect.top - tipRect.height - totalOffset, left: tRect.left + (tRect.width - tipRect.width) / 2 },
+        bottom: { top: tRect.bottom + totalOffset, left: tRect.left + (tRect.width - tipRect.width) / 2 },
+        left: {
+          top: tRect.top + (tRect.height - tipRect.height) / 2,
+          left: tRect.left - tipRect.width - totalOffset,
+        },
+        right: { top: tRect.top + (tRect.height - tipRect.height) / 2, left: tRect.right + totalOffset },
 
-      topLeft: { top: tRect.top - tipRect.height - totalOffset, left: tRect.left },
-      topRight: { top: tRect.top - tipRect.height - totalOffset, left: tRect.right - tipRect.width },
-      bottomLeft: { top: tRect.bottom + totalOffset, left: tRect.left },
-      bottomRight: { top: tRect.bottom + totalOffset, left: tRect.right - tipRect.width },
+        topLeft: { top: tRect.top - tipRect.height - totalOffset, left: tRect.left },
+        topRight: { top: tRect.top - tipRect.height - totalOffset, left: tRect.right - tipRect.width },
+        bottomLeft: { top: tRect.bottom + totalOffset, left: tRect.left },
+        bottomRight: { top: tRect.bottom + totalOffset, left: tRect.right - tipRect.width },
 
-      leftTop: { top: tRect.top, left: tRect.left - tipRect.width - totalOffset },
-      leftBottom: { top: tRect.bottom - tipRect.height, left: tRect.left - tipRect.width - totalOffset },
-      rightTop: { top: tRect.top, left: tRect.right + totalOffset },
-      rightBottom: { top: tRect.bottom - tipRect.height, left: tRect.right + totalOffset },
-    };
+        leftTop: { top: tRect.top, left: tRect.left - tipRect.width - totalOffset },
+        leftBottom: { top: tRect.bottom - tipRect.height, left: tRect.left - tipRect.width - totalOffset },
+        rightTop: { top: tRect.top, left: tRect.right + totalOffset },
+        rightBottom: { top: tRect.bottom - tipRect.height, left: tRect.right + totalOffset },
+      };
 
-    const next = positions[placement];
-    tooltip.style.top = `${next.top + scrollY}px`;
-    tooltip.style.left = `${next.left + scrollX}px`;
-    tooltip.style.visibility = 'visible';
-  }, [placement, arrow]);
+      const next = positions[placement];
+      tooltip.style.top = `${next.top + scrollY}px`;
+      tooltip.style.left = `${next.left + scrollX}px`;
+      tooltip.style.visibility = 'visible';
+    },
+    [placement, arrow],
+  );
 
   //=============== 显示/隐藏 tooltip =================//
 

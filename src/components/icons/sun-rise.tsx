@@ -1,7 +1,4 @@
-import type React from 'react';
-import Icon from './base/index';
 import type { SVGProps } from 'react';
-import type { IconWrapperProps } from './base/index';
 
 export function SunRise(props?: SVGProps<SVGSVGElement>) {
   return (
@@ -45,9 +42,3 @@ export function SunRise(props?: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-
-const SunRiseIcon: React.FC<IconWrapperProps> = (props) => {
-  return <Icon icon={<SunRise />} {...props} />;
-};
-
-export default SunRiseIcon;

@@ -1,14 +1,15 @@
-import { BiliBiliIon, QQIcon, TiktokIcon, TwitterIcon, GithubIcon, AvatarIcon } from '@components/icons';
+import { createElement } from 'react';
+import { BiliBiliIcon, QQIcon, TiktokIcon, TwitterIcon, GithubIcon } from '@components/icons/social-contact';
 
 export const footerData = {
   top: {
-    avatar: AvatarIcon,
+    avatar: '/avatar.png',
     socialIcons: [
-      { name: 'X', icon: TwitterIcon, to: 'https://x.com/Alice577536738' },
-      { name: 'bilibili', icon: BiliBiliIon, to: 'https://space.bilibili.com/1906238729' },
-      { name: 'GitHub', icon: GithubIcon, to: 'https://github.com/8023time' },
-      { name: 'QQ', icon: QQIcon, to: 'https://weibo.com/2162105974' },
-      { name: '抖音', icon: TiktokIcon, to: 'https://zhihu.com/你的账号' },
+      { name: 'X', icon: createElement(TwitterIcon), to: 'https://x.com/Alice577536738' },
+      { name: 'bilibili', icon: createElement(BiliBiliIcon), to: 'https://space.bilibili.com/1906238729' },
+      { name: 'GitHub', icon: createElement(GithubIcon), to: 'https://github.com/8023time' },
+      { name: 'QQ', icon: createElement(QQIcon), to: 'https://weibo.com/2162105974' },
+      { name: '抖音', icon: createElement(TiktokIcon), to: 'https://zhihu.com/你的账号' },
     ],
     stats: '哇，本站居然运行了 400 天 10 小时 10 分 30 秒 🤯😯🎉',
   },

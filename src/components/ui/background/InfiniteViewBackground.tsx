@@ -1,5 +1,5 @@
-import type { FC, ReactNode } from 'react';
 import { cn } from '@/lib/class-name';
+import type { FC, ReactNode } from 'react';
 import { useState, useEffect, useRef } from 'react';
 
 /**

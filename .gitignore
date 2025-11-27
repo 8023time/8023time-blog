@@ -19,3 +19,12 @@ dist-ssr
 *.suo
 *.sln
 *.sw?
+
+# Environment files
+.env 
+.env.production
+.env.development
+
+# next.js
+/.next/
+/out/

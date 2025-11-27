@@ -1,6 +1,7 @@
+import Link from 'next/link';
+import Image from 'next/image';
 import { cn } from '@/lib/class-name';
 import { footerData } from './config';
-import { NavLink } from 'react-router';
 import { ThemeSwitcher } from '@components/ui/theme-switcher';
 import { SectionDivider } from '@components/layout/SectionDivider';
 
@@ -24,16 +25,16 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
       {/*  contact info （联系方式） */}
       <SectionDivider>
         <div className='flex w-full flex-col items-center justify-center'>
-          {footerData.top.avatar && <footerData.top.avatar size={42} />}
+          {footerData.top.avatar && (
+            <Image src={footerData.top.avatar} alt='avatar' width={30} height={30} className='rounded-full' />
+          )}
           <ul className='flex gap-4'>
             {footerData.top.socialIcons.map((item) => {
               return (
                 <li key={item.name}>
-                  <NavLink to={item.to} target='_blank'>
-                    <button title={item.name}>
-                      <item.icon size={26} />
-                    </button>
-                  </NavLink>
+                  <Link href={item.to} target='_blank'>
+                    <button title={item.name}>{item.icon}</button>
+                  </Link>
                 </li>
               );
             })}
@@ -61,11 +62,11 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                       <ul className='mt-4 grid gap-4 px-10'>
                         {data.items.map((item) => (
                           <li key={item.to} className='flex flex-col gap-3'>
-                            <NavLink key={item.to} to={item.to}>
+                            <Link key={item.to} href={item.to}>
                               <span className='rounded-lg px-2 py-1 whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-800'>
                                 {item.name}
                               </span>
-                            </NavLink>
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -88,11 +89,11 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                       <ul className='mt-4 grid gap-4 px-10'>
                         {data.items.map((item) => (
                           <li key={item.name} className='flex flex-col gap-3'>
-                            <NavLink to={item.to}>
+                            <Link href={item.to}>
                               <span className='rounded-lg px-2 py-1 whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-800'>
                                 {item.name}
                               </span>
-                            </NavLink>
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -121,11 +122,11 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                     {groups.map((group) => (
                       <li key={group[0].to} className='flex flex-col gap-3'>
                         {group.map((item) => (
-                          <NavLink key={item.to} to={item.to}>
+                          <Link key={item.to} href={item.to}>
                             <span className='rounded-lg px-2 py-1 whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-800'>
                               {item.name}
                             </span>
-                          </NavLink>
+                          </Link>
                         ))}
                       </li>
                     ))}

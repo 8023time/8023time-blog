@@ -1,9 +1,13 @@
+'use client';
+
 import { useState, useEffect, useCallback } from 'react';
 
 export function useFullscreen() {
-  const [isFullscreen, setIsFullscreen] = useState(Boolean(document.fullscreenElement));
+  const [isFullscreen, setIsFullscreen] = useState(() => {
+    if (typeof document === 'undefined') return false;
+    return Boolean(document.fullscreenElement);
+  });
 
-  // 监控全屏状态（确保 ESC / F11 / 外部退出能感知）
   useEffect(() => {
     const handler = () => {
       setIsFullscreen(Boolean(document.fullscreenElement));

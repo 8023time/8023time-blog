@@ -1,11 +1,11 @@
-import { Up } from '@components/icons';
+import { Up } from '@components/icons/up';
 import { scrollTo } from '@/lib/scroll-to';
 import { FloatButton } from './FloatButton';
 import { getScroll } from '@/lib/get-scroll';
 import type { BackTopProps } from './interface';
-import { useState, useEffect, type FC } from 'react';
 import type { FloatButtonElement } from './interface';
 import { motion, AnimatePresence } from 'motion/react';
+import { useState, useEffect, type FC, useCallback } from 'react';
 
 export const BackTop: FC<BackTopProps> = (props) => {
   const { icon, duration, visibilityHeight, target, ...rest } = props;
@@ -16,25 +16,34 @@ export const BackTop: FC<BackTopProps> = (props) => {
     return window;
   };
 
-  const handleScroll = (e: Event) => {
-    const scrollTop = getScroll(e.target as HTMLElement | Document | Window);
-    setVisible(scrollTop > (visibilityHeight || 0));
-  };
+  const handleScroll = useCallback(
+    (e: Event) => {
+      const scrollTop = getScroll(e.target as HTMLElement | Document | Window);
+      setVisible(scrollTop > (visibilityHeight || 0));
+    },
+    [visibilityHeight],
+  );
 
-  const checkScrollPosition = (container: HTMLElement | Document | Window) => {
-    const scrollTop = getScroll(container);
-    setVisible(scrollTop > (visibilityHeight || 0));
-  };
+  const checkScrollPosition = useCallback(
+    (container: HTMLElement | Document | Window) => {
+      const scrollTop = getScroll(container);
+      setVisible(scrollTop > (visibilityHeight || 0));
+    },
+    [visibilityHeight],
+  );
 
   useEffect(() => {
     const getTarget = target || getDefaultTarget;
     const container = getTarget();
-    checkScrollPosition(container);
+
+    const rafId = requestAnimationFrame(() => checkScrollPosition(container));
     container?.addEventListener('scroll', handleScroll);
+
     return () => {
+      cancelAnimationFrame(rafId);
       container?.removeEventListener('scroll', handleScroll);
     };
-  }, [target]);
+  }, [target, visibilityHeight, checkScrollPosition, handleScroll]);
 
   //=============== return to top(返回顶部) ===============//
   const scrollToTop: React.MouseEventHandler<FloatButtonElement> = () => {

@@ -138,6 +138,7 @@ export const Typewriter: FC<TypewriterProps> = ({
   }, [displayedText, currentTextIndex, isDeleting, texts, typingSpeed, deleteSpeed, pauseTime, loop]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDisplayedText('');
     setCurrentTextIndex(0);
     setIsDeleting(false);

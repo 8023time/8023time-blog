@@ -151,38 +151,40 @@ export const FluidGrid: React.FC<GridBackgroundProps> = ({
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   }, [borderColor, hoverFillColor, squareSize, colorMode]);
 
-  const updateAnimation = useCallback(() => {
-    const effectiveSpeed = Math.max(speed, 0.1);
-    const offset = gridOffset.current;
-    const size = squareSize;
+  const updateAnimation = useCallback(
+    function animate() {
+      const effectiveSpeed = Math.max(speed, 0.1);
+      const offset = gridOffset.current;
+      const size = squareSize;
 
-    // Use modular arithmetic to keep the offset within [0, squareSize)
-    const modulo = (n: number, m: number) => ((n % m) + m) % m;
+      const modulo = (n: number, m: number) => ((n % m) + m) % m;
 
-    switch (direction) {
-      case 'right':
-        offset.x = modulo(offset.x - effectiveSpeed, size);
-        break;
-      case 'left':
-        offset.x = modulo(offset.x + effectiveSpeed, size);
-        break;
-      case 'up':
-        offset.y = modulo(offset.y + effectiveSpeed, size);
-        break;
-      case 'down':
-        offset.y = modulo(offset.y - effectiveSpeed, size);
-        break;
-      case 'diagonal':
-        offset.x = modulo(offset.x - effectiveSpeed, size);
-        offset.y = modulo(offset.y - effectiveSpeed, size);
-        break;
-      default:
-        break;
-    }
+      switch (direction) {
+        case 'right':
+          offset.x = modulo(offset.x - effectiveSpeed, size);
+          break;
+        case 'left':
+          offset.x = modulo(offset.x + effectiveSpeed, size);
+          break;
+        case 'up':
+          offset.y = modulo(offset.y + effectiveSpeed, size);
+          break;
+        case 'down':
+          offset.y = modulo(offset.y - effectiveSpeed, size);
+          break;
+        case 'diagonal':
+          offset.x = modulo(offset.x - effectiveSpeed, size);
+          offset.y = modulo(offset.y - effectiveSpeed, size);
+          break;
+        default:
+          break;
+      }
 
-    drawGrid();
-    requestRef.current = requestAnimationFrame(updateAnimation);
-  }, [direction, speed, squareSize, drawGrid]);
+      drawGrid();
+      requestRef.current = requestAnimationFrame(animate);
+    },
+    [direction, speed, squareSize, drawGrid],
+  );
 
   const handleMouseMove = useCallback(
     (event: MouseEvent) => {

@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router';
+import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 
 export default function NotFound404() {
@@ -63,12 +63,12 @@ export default function NotFound404() {
 
         <p className='mt-4 text-lg text-neutral-600'>页面消失在数据的迷雾中</p>
 
-        <NavLink
-          to='/'
+        <Link
+          href='/'
           className='mt-6 rounded-xl bg-black px-6 py-3 text-sm font-medium text-white transition-all hover:bg-neutral-800'
         >
           返回首页
-        </NavLink>
+        </Link>
       </div>
 
       {/* 精致 CSS */}

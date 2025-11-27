@@ -1,3 +1,5 @@
+'use client';
+
 import type { FC } from 'react';
 import { useTheme } from '@hooks/use-theme';
 import type { ThemeType } from '@hooks/use-theme';
