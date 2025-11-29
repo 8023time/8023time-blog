@@ -9,10 +9,10 @@ interface HeaderMenuConfig {
 
 export const headerMenuConfig: HeaderMenuConfig[] = [
   {
-    title: '首页',
+    title: '此站点',
     path: '/',
     subMenu: [
-      { title: '此网站', path: '/about/site' },
+      { title: '首页', path: '/' },
       { title: '关于作者', path: '/about/author' },
       { title: '网站分析', path: '/statistics' },
     ],
@@ -24,6 +24,7 @@ export const headerMenuConfig: HeaderMenuConfig[] = [
       { title: '留言区', path: '/comments' },
       { title: '技能', path: '/skill' },
       { title: '网站合集', path: '/site' },
+      { title: 'ai聊天', path: '/chat' },
     ],
   },
 

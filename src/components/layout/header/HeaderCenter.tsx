@@ -12,10 +12,11 @@ export const HeaderCenter = () => {
             <NavigationMenu.Item key={item.title} className='relative'>
               {hasChildren ? (
                 <>
-                  <NavigationMenu.Trigger className='group relative flex items-center gap-1 rounded-full px-4 py-2 text-slate-600 transition-all duration-200 after:absolute after:-bottom-1 after:left-1/2 after:h-0.5 after:w-0 after:-translate-x-1/2 after:rounded-full after:bg-gradient-to-r after:from-pink-500 after:to-purple-500 after:opacity-0 after:transition-all after:duration-300 after:content-[""] hover:text-slate-900 hover:after:w-8 hover:after:opacity-100 data-[state=open]:text-slate-900 data-[state=open]:after:w-8 data-[state=open]:after:opacity-100 dark:text-slate-200 dark:hover:text-white dark:data-[state=open]:text-white'>
+                  <NavigationMenu.Trigger className='group relative flex items-center gap-1 rounded-full px-3 py-1 text-slate-600 transition-all duration-200 after:absolute after:inset-0 after:rounded-full after:bg-pink-300/20 after:opacity-0 after:transition-opacity after:duration-300 hover:text-slate-900 hover:after:opacity-50 dark:text-slate-200 dark:hover:text-white'>
                     <span>{item.title}</span>
                   </NavigationMenu.Trigger>
-                  <NavigationMenu.Content className='absolute top-full left-1/2 z-30 mt-4 w-fit -translate-x-1/2 overflow-hidden rounded-xl border border-white/40 bg-white/95 text-sm shadow-2xl ring-1 shadow-black/10 ring-black/5 backdrop-blur-3xl dark:border-white/10 dark:ring-white/10'>
+
+                  <NavigationMenu.Content className='absolute top-full left-1/2 z-30 mt-4 w-fit -translate-x-1/2 overflow-hidden rounded-xl border border-white/40 bg-white/95 text-sm shadow-2xl ring-1 shadow-black/10 ring-black/5 backdrop-blur-3xl dark:border-white/10 dark:bg-slate-900/70 dark:ring-white/10'>
                     <ul className='flex flex-col gap-3'>
                       {item.subMenu?.map((child) => (
                         <li key={child.title}>

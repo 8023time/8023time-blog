@@ -4,6 +4,5 @@ import { consoleBrandApp } from '@lib/console-brand';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   consoleBrandApp()();
-
   return <>{children}</>;
 }

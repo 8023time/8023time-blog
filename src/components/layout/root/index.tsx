@@ -9,7 +9,7 @@ export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
       <LineLayout>
         <Header />
         <div className='flex flex-col'>
-          <div className='flex-1'>{children}</div>
+          <div className='flex-1 pt-13'>{children}</div>
           <Footer />
         </div>
       </LineLayout>
