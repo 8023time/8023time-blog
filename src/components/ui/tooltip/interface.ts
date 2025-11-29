@@ -1,23 +1,19 @@
 import type { ReactNode } from 'react';
 
-export type TooltipPlacement =
-  | 'top'
-  | 'left'
-  | 'right'
-  | 'bottom'
-  | 'topLeft'
-  | 'topRight'
-  | 'bottomLeft'
-  | 'bottomRight'
-  | 'leftTop'
-  | 'leftBottom'
-  | 'rightTop'
-  | 'rightBottom';
+export type TooltipPlacement = 'top' | 'left' | 'right' | 'bottom';
 
 /**
  * @description: Tooltip组件props
  */
 export interface TooltipProps {
+  /**
+   * @description: 子元素
+   */
+  children: ReactNode;
+  /**
+   * @description: 类名
+   */
+  className?: string;
   /**
    * @description: 子元素
    */
@@ -30,10 +26,6 @@ export interface TooltipProps {
    * @description: 鼠标移入显示延迟
    */
   enterDelay?: number;
-  /**
-   * @description: 鼠标移出隐藏延迟
-   */
-  leaveDelay?: number;
   /**
    * @description: 是否需要箭头
    */

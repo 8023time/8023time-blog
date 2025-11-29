@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 export default function NotFound404() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -18,19 +18,22 @@ export default function NotFound404() {
     return imgData;
   };
 
-  const animate = () => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+  const animate = useCallback(
+    function _animate() {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
 
-    const { width, height } = canvas;
-    const noise = generateNoise(ctx, width, height);
-    ctx.putImageData(noise, 0, 0);
+      const { width, height } = canvas;
+      const noise = generateNoise(ctx, width, height);
+      ctx.putImageData(noise, 0, 0);
 
-    animationRef.current = requestAnimationFrame(animate);
-  };
+      animationRef.current = requestAnimationFrame(_animate);
+    },
+    [canvasRef],
+  );
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -50,7 +53,7 @@ export default function NotFound404() {
       cancelAnimationFrame(animationRef.current);
       window.removeEventListener('resize', resize);
     };
-  }, []);
+  }, [animate]);
 
   return (
     <div className='h-full w-full overflow-hidden bg-white'>

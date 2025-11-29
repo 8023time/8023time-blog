@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 import { TiptapEditorContainer } from '@/components/cms/editor';
 import { X } from '@/components/icons/actions';
@@ -70,7 +71,7 @@ export default function CreatePostPage() {
               className='flex-1 rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-transparent focus:ring-2 focus:ring-blue-500'
             />
             {cover && (
-              <img
+              <Image
                 src={cover}
                 alt='封面预览'
                 className='h-20 w-20 rounded-lg border border-gray-200 object-cover'

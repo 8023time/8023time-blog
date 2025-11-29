@@ -30,7 +30,7 @@ export const footerData = {
         { name: '留言版区', to: '/comments' },
         { name: '音乐天地', to: '/music' },
         { name: '个人简历', to: '/music' },
-        { name: '照相馆', to: '/PolaroidPhoto' },
+        { name: '照相馆', to: '/polaroidPhoto' },
       ],
     },
     {

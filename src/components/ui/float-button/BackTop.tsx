@@ -67,7 +67,7 @@ export const BackTop: FC<BackTopProps> = (props) => {
               height: '40px',
               zIndex: 999,
             }}
-            className='fixed right-5 bottom-20'
+            className='fixed right-5 bottom-5'
           >
             <FloatButton icon={mergedIcon} {...rest} onClick={scrollToTop} />
           </motion.div>

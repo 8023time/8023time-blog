@@ -2,8 +2,8 @@
 
 import { UserAuth } from './user-auth';
 import { BreadCrumb } from './bread-crumb';
-import { ThemeToggle } from './theme-toggle';
-import { FullscreenButton } from './full-screen';
+import { ThemeToggle } from '@components/ui/theme-switcher';
+import { FullscreenSwitcher } from '@components/ui/full-screen-switcher';
 
 export default function Header() {
   return (
@@ -11,7 +11,7 @@ export default function Header() {
       <BreadCrumb />
 
       <div className='flex items-center'>
-        <FullscreenButton />
+        <FullscreenSwitcher />
         <ThemeToggle />
         <UserAuth />
       </div>

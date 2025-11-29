@@ -1,4 +1,5 @@
 import { Card } from './base';
+import Image from 'next/image';
 
 interface SiteCardprops {
   name: string;
@@ -22,7 +23,7 @@ export const SiteCard = ({ name, logo, tags, description }: SiteCardprops) => {
       <div className='flex h-full flex-col gap-3 p-4'>
         {/* 顶部：Logo + 名称 + 标签 */}
         <div className='flex items-center gap-2'>
-          <img
+          <Image
             src={logo}
             alt='logo'
             width={40}

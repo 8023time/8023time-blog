@@ -15,6 +15,8 @@ const themeList: ThemeType[] = [
   { name: 'System', label: '跟随系统' },
 ];
 
+let mode = '';
+
 const getThemeFromStorage = (): ThemeType['name'] => {
   if (typeof window === 'undefined') return 'light';
   const stored = localStorage.getItem(THEME_KEY_LOCAL);
@@ -37,6 +39,8 @@ const applyThemeToDocument = (themeName: ThemeType['name']) => {
     const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     themeName = isDark ? 'dark' : 'light';
   }
+
+  mode = themeName;
 
   document.documentElement.setAttribute('data-theme', themeName);
 };
@@ -74,5 +78,5 @@ export const useTheme = () => {
     return cleanup;
   }, [theme.name]);
 
-  return { theme, themeList, setTheme };
+  return { theme, themeList, setTheme, mode };
 };

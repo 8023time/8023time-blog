@@ -6,6 +6,7 @@ import { useState, useRef } from 'react';
 import type { PolaroidPhoto } from './type';
 import { Camera } from './components/Camera';
 import { Polaroid } from './components/Polaroid';
+import { useIsClient } from '@/hooks/use-is-client';
 import { motion, AnimatePresence } from 'motion/react';
 import { SectionDivider } from '@components/layout/SectionDivider';
 
@@ -42,6 +43,7 @@ export default function PolaroidPhoto() {
   const [photos, setPhotos] = useState<PolaroidPhoto[]>([]);
   const [isProcessing, setIsProcessing] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const isClient = useIsClient();
 
   const reactId = useId(); // 每个组件实例固定一次
   const [counter, setCounter] = useState(0);
@@ -57,6 +59,12 @@ export default function PolaroidPhoto() {
     if (isProcessing) return;
     setIsProcessing(true);
 
+    let _innerHeight = 0;
+
+    if (isClient) {
+      _innerHeight = window.innerHeight;
+    }
+
     // 1. Create the photo object immediately for the animation
     const newPhoto: PolaroidPhoto = {
       id: generateUniqueId(),
@@ -64,7 +72,7 @@ export default function PolaroidPhoto() {
       timestamp: Date.now(),
       caption: '', // Empty initially
       x: 50, // Start near the camera ejection point relative to container
-      y: window.innerHeight - 450, // Approximate top of camera
+      y: _innerHeight - 450, // Approximate top of camera
       rotation: (Math.random() - 0.5) * 10, // Random slight tilt
       isDeveloping: true,
     };

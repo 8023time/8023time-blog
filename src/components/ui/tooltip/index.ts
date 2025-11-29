@@ -1,4 +1,2 @@
-'use client';
-
-export * from './interface';
 export * from './Tooltip';
+export * from './interface';

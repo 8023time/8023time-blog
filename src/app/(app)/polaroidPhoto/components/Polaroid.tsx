@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import React, { useState } from 'react';
 import type { PolaroidPhoto } from '../type';
@@ -122,7 +123,7 @@ export const Polaroid: React.FC<PolaroidProps> = ({ photo, containerRef, onDragE
       <div className='relative bg-white p-3 pb-8 shadow-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl'>
         {/* Photo Area */}
         <div className='relative mb-3 aspect-[4/5] w-full overflow-hidden bg-gray-900'>
-          <img
+          <Image
             src={photo.imageUrl}
             alt='Memory'
             className={`h-full w-full object-cover ${photo.isDeveloping ? 'developing-photo' : ''}`}
