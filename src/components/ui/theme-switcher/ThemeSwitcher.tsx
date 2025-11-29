@@ -87,7 +87,7 @@ export const ThemeSwitcher: FC = () => {
 
   return (
     <div
-      className='relative z-0 inline-grid grid-cols-3 gap-0.5 rounded-full bg-gray-950/5 p-0.75 text-gray-950 dark:bg-white/10 dark:text-white'
+      className='theme-transition relative z-0 inline-grid grid-cols-3 gap-0.5 rounded-full bg-gray-950/5 p-0.75 text-gray-950 dark:bg-white/10'
       role='radiogroup'
     >
       {themeList.map(({ name }) => {

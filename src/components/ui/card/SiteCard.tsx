@@ -1,5 +1,5 @@
 import { Card } from './base';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 interface SiteCardprops {
   name: string;
@@ -23,7 +23,8 @@ export const SiteCard = ({ name, logo, tags, description }: SiteCardprops) => {
       <div className='flex h-full flex-col gap-3 p-4'>
         {/* 顶部：Logo + 名称 + 标签 */}
         <div className='flex items-center gap-2'>
-          <Image
+          <div>{logo}</div>
+          {/* <Image
             src={logo}
             alt='logo'
             width={40}
@@ -33,7 +34,7 @@ export const SiteCard = ({ name, logo, tags, description }: SiteCardprops) => {
             onError={(e) => {
               (e.currentTarget as HTMLImageElement).setAttribute('data-error', '1');
             }}
-          />
+          /> */}
           <div className='flex flex-col gap-0.5'>
             <div className='flex items-center gap-1'>
               <div className='text-lg font-semibold'>{name}</div>

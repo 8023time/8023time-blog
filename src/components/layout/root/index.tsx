@@ -1,5 +1,5 @@
-import { Footer } from '../footer/index';
-import { Header } from '../header/Header';
+import { Footer } from '../footer';
+import { Header } from '../header';
 import type { FC, ReactNode } from 'react';
 import { LineLayout } from '@components/layout/lineLayout/index';
 
