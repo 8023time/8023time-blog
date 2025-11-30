@@ -53,7 +53,7 @@ const Home: FC = () => {
     },
   ];
 
-  const primaryColor = 'text-pink-500'; // 统一使用主题粉色作为边框和文字颜色
+  const primaryColor = 'text-pink-500';
 
   return (
     <>
@@ -80,7 +80,7 @@ const Home: FC = () => {
             </h1>
 
             <h2 className='flex items-center justify-center text-xl font-medium text-neutral-700 sm:text-2xl md:justify-start md:text-3xl lg:text-4xl dark:text-neutral-300'>
-              A Web{' '}
+              A Full Stack{' '}
               <code className='ml-2 rounded-md bg-pink-100 px-2 py-1 font-mono text-pink-600 dark:bg-pink-900/30 dark:text-pink-400'>
                 &lt;Developer /&gt;
               </code>

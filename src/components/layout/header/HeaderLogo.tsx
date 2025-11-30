@@ -38,15 +38,12 @@ export const Avatar = () => {
       <div className='flex items-center gap-3'>
         <_Avatar.Root className='relative h-8 w-8 overflow-hidden rounded md:h-9 md:w-9'>
           <_Avatar.Image className='h-full w-full object-cover' src='/avatar.png' alt='Avatar' onClick={handleLogin} />
-          <_Avatar.Fallback
-            delayMs={600}
-            className='flex h-full w-full items-center justify-center text-sm font-bold text-white'
-          >
+          <_Avatar.Fallback delayMs={600} className='flex h-full w-full items-center justify-center text-sm font-bold'>
             🤯
           </_Avatar.Fallback>
         </_Avatar.Root>
         <Link href='/'>
-          <span className='bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-center font-sans text-lg font-bold tracking-wide text-transparent dark:from-gray-100 dark:to-gray-300'>
+          <span className='bg-gradient-to-r from-gray-500 to-gray-900 bg-clip-text text-center font-sans text-lg font-bold tracking-wide text-transparent dark:from-gray-100 dark:to-gray-500'>
             寻觅~流光
           </span>
         </Link>

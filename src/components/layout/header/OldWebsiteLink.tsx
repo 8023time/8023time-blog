@@ -4,7 +4,7 @@ import type { FC, ReactNode } from 'react';
 export const OldWebsiteLink: FC<{ children?: ReactNode; className?: string }> = ({ className, children }) => {
   return (
     <>
-      <div className={cn('group relative px-1.5 text-sm/6 text-sky-800 dark:text-sky-300', className)}>
+      <div className={cn('group relative cursor-pointer px-1.5 text-sm/6 text-sky-800 dark:text-sky-300', className)}>
         <span className='absolute inset-0 border border-dashed border-sky-300/60 bg-sky-400/10 group-hover:bg-sky-400/15 dark:border-sky-300/30'></span>
         {children}
         <CornerSVG className='top-[-2px] left-[-2px]' />

@@ -10,10 +10,7 @@ export const FooterTop = () => {
           <li key={item.name}>
             <Link href={item.to} target='_blank' className='transition-transform hover:scale-110'>
               <Tooltip content={item.name} placement='top'>
-                <span
-                  className='theme-transition flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition-colors duration-200 hover:bg-blue-500 hover:text-white dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-blue-400 dark:hover:text-black'
-                  title={item.name}
-                >
+                <span className='theme-transition icon-circle' title={item.name}>
                   {item.icon}
                 </span>
               </Tooltip>

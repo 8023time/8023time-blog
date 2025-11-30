@@ -26,9 +26,7 @@ export const FooterCenter = () => {
                       {data.items.map((item) => (
                         <li key={item.to} className='flex flex-col gap-3'>
                           <Link key={item.to} href={item.to}>
-                            <span className='rounded-lg px-2 py-1 whitespace-nowrap hover:bg-gray-200'>
-                              {item.name}
-                            </span>
+                            <span className='icon-common rounded-lg px-2 py-1 whitespace-nowrap'>{item.name}</span>
                           </Link>
                         </li>
                       ))}
@@ -48,9 +46,7 @@ export const FooterCenter = () => {
                       {data.items.map((item) => (
                         <li key={item.name} className='flex flex-col gap-3'>
                           <Link href={item.to}>
-                            <span className='rounded-lg px-2 py-1 whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-800'>
-                              {item.name}
-                            </span>
+                            <span className='icon-common rounded-lg px-2 py-1 whitespace-nowrap'>{item.name}</span>
                           </Link>
                         </li>
                       ))}
@@ -82,9 +78,7 @@ export const FooterCenter = () => {
                       <li key={group[0].to} className='flex flex-col gap-3'>
                         {group.map((item) => (
                           <Link key={item.to} href={item.to}>
-                            <span className='rounded-lg px-2 py-1 whitespace-nowrap hover:bg-gray-200 dark:hover:bg-gray-800'>
-                              {item.name}
-                            </span>
+                            <span className='icon-common rounded-lg px-2 py-1 whitespace-nowrap'>{item.name}</span>
                           </Link>
                         ))}
                       </li>

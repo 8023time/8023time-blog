@@ -62,14 +62,14 @@ export const BackTop: FC<BackTopProps> = (props) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            style={{
-              width: '40px',
-              height: '40px',
-              zIndex: 999,
-            }}
-            className='fixed right-5 bottom-5'
+            className='fixed right-5 bottom-5 z-50 rounded-full'
           >
-            <FloatButton icon={mergedIcon} {...rest} onClick={scrollToTop} />
+            <FloatButton
+              icon={mergedIcon}
+              className='theme-transition icon-common shadow-lg'
+              {...rest}
+              onClick={scrollToTop}
+            />
           </motion.div>
         )}
       </AnimatePresence>

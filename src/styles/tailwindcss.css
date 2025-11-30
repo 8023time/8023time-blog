@@ -2,5 +2,13 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 .theme-transition {
-  @apply transition-colors duration-1000 ease-in-out;
+  @apply transition-colors duration-500 ease-in-out;
+}
+
+.icon-common {
+  @apply cursor-pointer hover:bg-blue-500 hover:text-white dark:hover:bg-indigo-400 dark:hover:text-black;
+}
+
+.icon-circle {
+  @apply flex size-8 cursor-pointer items-center justify-center rounded-full bg-black text-white hover:bg-blue-500 dark:bg-white dark:text-black dark:hover:bg-indigo-400 dark:hover:text-white;
 }

@@ -13,9 +13,8 @@ export const HeaderMenu = () => {
         <Dialog.Trigger>
           <button
             type='button'
-            className='flex size-7 items-center justify-center rounded-md text-slate-700 hover:bg-slate-200/40 dark:text-slate-200 dark:hover:bg-slate-700/40'
+            className='theme-transition icon-common flex size-8 items-center justify-center rounded-md'
             aria-label='Navigation'
-            title='Navigation'
           >
             <MingcuteMenuFill />
           </button>

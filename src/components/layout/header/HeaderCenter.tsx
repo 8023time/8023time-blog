@@ -12,7 +12,7 @@ export const HeaderCenter = () => {
             <NavigationMenu.Item key={item.title} className='relative'>
               {hasChildren ? (
                 <>
-                  <NavigationMenu.Trigger className='group relative flex items-center gap-1 rounded-full px-3 py-1 text-slate-600 transition-all duration-200 after:absolute after:inset-0 after:rounded-full after:bg-pink-300/20 after:opacity-0 after:transition-opacity after:duration-300 hover:text-slate-900 hover:after:opacity-50 dark:text-slate-200 dark:hover:text-white'>
+                  <NavigationMenu.Trigger className='group theme-transition icon-common relative flex items-center gap-1 rounded-full px-3 py-1 text-slate-600 transition-all duration-200'>
                     <span>{item.title}</span>
                   </NavigationMenu.Trigger>
 
@@ -22,7 +22,7 @@ export const HeaderCenter = () => {
                         <li key={child.title}>
                           <NavigationMenu.Link asChild>
                             <Link
-                              className='flex items-center justify-center gap-2 px-6 py-2 hover:bg-gray-200 dark:hover:bg-gray-800'
+                              className='theme-transition icon-common flex items-center justify-center gap-2 px-6 py-2'
                               href={child.path ?? '/'}
                             >
                               <span className='text-center text-sm whitespace-nowrap'>{child.title}</span>
