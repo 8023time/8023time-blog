@@ -1,4 +1,18 @@
 import Image from 'next/image';
+import { ThemeToggle } from '@components/ui/theme-switcher';
+import { FullscreenSwitcher } from '@components/ui/full-screen-switcher';
+
+export const HeaderRight = () => {
+  return (
+    <>
+      <div className='flex items-center'>
+        <FullscreenSwitcher />
+        <ThemeToggle />
+        <UserAuth />
+      </div>
+    </>
+  );
+};
 
 export const UserAuth = () => {
   return (

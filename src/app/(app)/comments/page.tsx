@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import { useMemo, useState, useRef, useLayoutEffect } from 'react';
-import { SectionDivider } from '@components/layout/SectionDivider';
+import { SectionDivider } from '@/components/ui/section-divider';
 
 const data = [
   { id: 1, text: '刚到这一章，好紧张啊' },

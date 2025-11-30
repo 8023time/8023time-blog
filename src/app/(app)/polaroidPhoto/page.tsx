@@ -8,7 +8,7 @@ import { Camera } from './components/Camera';
 import { Polaroid } from './components/Polaroid';
 import { useIsClient } from '@/hooks/use-is-client';
 import { motion, AnimatePresence } from 'motion/react';
-import { SectionDivider } from '@components/layout/SectionDivider';
+import { SectionDivider } from '@/components/ui/section-divider';
 
 // Mock Captions since we removed the AI library
 const MOCK_CAPTIONS = [

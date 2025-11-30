@@ -1,9 +1,9 @@
 import '@styles/index.css';
 import type { Metadata } from 'next';
 import { cn } from '@lib/class-name';
-import { Layout } from '@layout/root';
 import type { ReactNode } from 'react';
 import { geistSans } from '@lib/text-font';
+import { APPLayout } from '@/components/layout';
 import { BackTop } from '@components/ui/float-button';
 import { ScrollProgressBar } from '@components/ui/page-scroll-progress';
 
@@ -39,7 +39,7 @@ export default function RootLayout({
       >
         <BackTop />
         <ScrollProgressBar />
-        <Layout>{children}</Layout>
+        <APPLayout>{children}</APPLayout>
       </body>
     </html>
   );

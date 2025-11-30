@@ -1,4 +1,4 @@
-import { SectionDivider } from '@components/layout/SectionDivider';
+import { SectionDivider } from '@/components/ui/section-divider';
 
 export default function AlbumPage() {
   return (

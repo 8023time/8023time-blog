@@ -1,6 +1,5 @@
 import type { SVGProps } from 'react';
 
-// 文本格式图标
 export function Bold(props: SVGProps<SVGSVGElement>) {
   return (
     <svg

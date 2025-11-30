@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '仪表盘',
+  title: '评论管理',
 };
 
 export default function CmsPage() {
-  return <>仪表盘 页面</>;
+  return <>评论管理 页面</>;
 }

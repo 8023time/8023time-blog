@@ -2,7 +2,7 @@ import { cn } from '@/lib/class-name';
 import { FooterTop } from './FooterTop';
 import { FooterBottom } from './FooterBottom';
 import { FooterCenter } from './FooterCenter';
-import { SectionDivider } from '@components/layout/SectionDivider';
+import { SectionDivider } from '@/components/ui/section-divider';
 
 export interface FooterProps {
   className?: string;

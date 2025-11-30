@@ -1,14 +1,20 @@
 import { usePathname } from 'next/navigation';
-import { layoutMenu } from '../sidebar/config';
+import { layoutMenu } from '../layout.config';
+
+function normalize(path: string) {
+  return path.replace(/\/+$/, '');
+}
 
 function getCurrentPageName(path: string): string {
-  if (path.startsWith('/activity/detail/')) return '活动详情';
+  const cleanPath = normalize(path);
 
   for (const menu of layoutMenu) {
-    if (menu.type === 'item' && menu.path === path) return menu.name;
+    if (menu.type === 'item' && normalize(menu.path) === cleanPath) return menu.name;
     if (menu.type === 'group') {
       for (const child of menu.children || []) {
-        if (child.path === path) return child.name;
+        if (normalize(child.path) === cleanPath) {
+          return child.name;
+        }
       }
     }
   }
@@ -21,10 +27,6 @@ export const BreadCrumb = () => {
   return (
     <>
       <div className='flex items-center text-sm'>
-        <a href='/activity' className='text-gray-500 transition-colors hover:text-blue-600'>
-          首页
-        </a>
-        <span className='mx-2 font-light text-gray-400'>/</span>
         <span className='max-w-xs truncate font-medium text-blue-600'>{currentName}</span>
       </div>
     </>

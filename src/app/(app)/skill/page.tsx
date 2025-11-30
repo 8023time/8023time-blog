@@ -3,7 +3,7 @@
 import { skills } from './config';
 import { Tag } from '@components/ui/tag';
 import { Container, Logo } from './components/index';
-import { SectionDivider } from '@components/layout/SectionDivider';
+import { SectionDivider } from '@/components/ui/section-divider';
 
 export default function Skill() {
   return (

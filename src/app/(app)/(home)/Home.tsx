@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { FC } from 'react';
 import { Typewriter } from '@components/ui/typewriter';
-import { SectionDivider } from '@components/layout/SectionDivider';
+import { SectionDivider } from '@/components/ui/section-divider';
 import { GithubIcon, BiliBiliIcon, TwitterIcon, QQIcon, TiktokIcon } from '@components/icons/social-contact';
 
 const floatAnimationStyles = `
