@@ -16,8 +16,6 @@ export const Avatar = () => {
 
     countRef.current++;
 
-    console.log(countRef.current);
-
     if (countRef.current >= 3) {
       countRef.current = 0;
       if (pathname !== '/') return;

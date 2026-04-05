@@ -1,9 +1,7 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import type { FC } from 'react';
 import { Typewriter } from '@components/ui/typewriter';
 import { SectionDivider } from '@/components/ui/section-divider';
-import { GithubIcon, BiliBiliIcon, TwitterIcon, QQIcon, TiktokIcon } from '@components/icons/social-contact';
 
 const floatAnimationStyles = `
   @keyframes float {
@@ -25,36 +23,6 @@ const floatAnimationStyles = `
 `;
 
 const Home: FC = () => {
-  const socialLinks = [
-    {
-      icon: <GithubIcon className='h-5 w-5' />,
-      href: 'https://github.com/8023time',
-      label: 'Github',
-      color: 'text-gray-900',
-    },
-    {
-      icon: <BiliBiliIcon className='h-5 w-5' />,
-      href: 'https://bilibili.com/1906238729',
-      label: 'Bilibili',
-      color: 'text-pink-600',
-    },
-    {
-      icon: <TwitterIcon className='h-5 w-5' />,
-      href: 'https://twitter.com/Alice577536738',
-      label: 'Twitter',
-      color: 'text-blue-400',
-    },
-    { icon: <QQIcon className='h-5 w-5' />, href: 'https://weibo.com/2162105974', label: 'QQ', color: 'text-red-500' },
-    {
-      icon: <TiktokIcon className='h-5 w-5' />,
-      href: 'https://www.tiktok.com/@8023time',
-      label: 'Tiktok',
-      color: 'text-black dark:text-white',
-    },
-  ];
-
-  const primaryColor = 'text-pink-500';
-
   return (
     <>
       <SectionDivider>
@@ -97,23 +65,6 @@ const Home: FC = () => {
                 mask={true}
                 cursorColor='#ec4899'
               />
-            </div>
-
-            {/* **** 核心修改：社交图标样式优化 **** */}
-            <div className='flex flex-wrap justify-center gap-4 pt-4 md:justify-start'>
-              {socialLinks.map((item) => (
-                <Link
-                  href={item.href}
-                  key={item.href}
-                  className={`group flex h-10 w-10 items-center justify-center rounded-full border-2 ${primaryColor} bg-white from-pink-500 to-purple-600 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:border-transparent hover:bg-gradient-to-r hover:text-white hover:shadow-xl hover:shadow-pink-500/40 md:h-12 md:w-12 dark:border-pink-500 dark:bg-neutral-900 dark:shadow-lg dark:shadow-pink-500/20`}
-                >
-                  <span
-                    className={`flex items-center justify-center transition-colors duration-300 [&>svg]:h-5 [&>svg]:w-5 md:[&>svg]:h-6 md:[&>svg]:w-6 ${primaryColor} animate-icon-bounce group-hover:text-white`} // 应用弹跳动画
-                  >
-                    {item.icon}
-                  </span>
-                </Link>
-              ))}
             </div>
           </div>
 

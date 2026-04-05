@@ -1,11 +1,13 @@
-'use client';
-
 import { skills } from './config';
 import { Tag } from '@components/ui/tag';
 import { Container, Logo } from './components/index';
 import { SectionDivider } from '@/components/ui/section-divider';
 
-export default function Skill() {
+export const metadata = {
+  title: '技能',
+};
+
+export default function SkillPage() {
   return (
     <SectionDivider>
       {skills.map((item, index) => (

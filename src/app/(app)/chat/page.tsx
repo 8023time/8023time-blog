@@ -2,8 +2,7 @@ import type { Metadata } from 'next';
 import Chat from './chat';
 
 export const metadata: Metadata = {
-  title: 'Chat',
-  description: 'Chat with other users',
+  title: 'AI聊天',
 };
 
 export default function ChatPage() {

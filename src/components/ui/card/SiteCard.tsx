@@ -1,3 +1,5 @@
+'use client';
+
 import { Card } from './base';
 // import Image from 'next/image';
 

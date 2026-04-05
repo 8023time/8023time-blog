@@ -74,8 +74,8 @@ export const FooterCenter = () => {
                       gridTemplateColumns: `repeat(${groups.length}, minmax(0, 1fr))`,
                     }}
                   >
-                    {groups.map((group) => (
-                      <li key={group[0].to} className='flex flex-col gap-3'>
+                    {groups.map((group, groupIndex) => (
+                      <li key={groupIndex} className='flex flex-col gap-3'>
                         {group.map((item) => (
                           <Link key={item.to} href={item.to}>
                             <span className='icon-common rounded-lg px-2 py-1 whitespace-nowrap'>{item.name}</span>

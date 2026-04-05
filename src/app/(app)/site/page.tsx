@@ -1,11 +1,13 @@
-'use client';
-
 import Link from 'next/link';
 // import Image from 'next/image';
 import { siteData } from './config';
 import { SiteCard } from '@/components/ui/card';
 
-export default function Site() {
+export const metadata = {
+  title: '站点导航',
+};
+
+export default function SitePage() {
   return (
     <>
       {/* 卡片网格 */}

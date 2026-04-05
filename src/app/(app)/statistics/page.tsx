@@ -1,6 +1,8 @@
-'use client';
-
 import { SectionDivider } from '@/components/ui/section-divider';
+
+export const metadata = {
+  title: '网站分析',
+};
 
 export default function Statistics() {
   return (

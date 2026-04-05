@@ -1,0 +1,7 @@
+# 禁止所有爬虫访问 /accounts
+User-agent: *
+Disallow: /cms
+ 
+# 允许所有爬虫访问其他路径
+User-agent: *
+Allow: /
