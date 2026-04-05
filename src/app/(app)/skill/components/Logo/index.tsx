@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/class-name';
@@ -31,7 +33,7 @@ const Logo: React.FC<LogoProps> = (props) => {
         (e.currentTarget as HTMLDivElement).style.borderColor = '';
       }}
     >
-      <Image src={src} className='h-full w-full object-contain' alt={name} aria-label={name} loading='lazy' />
+      <Image src={src} fill className='h-full w-full object-contain' alt={name} aria-label={name} loading='lazy' />
     </div>
   );
 };
